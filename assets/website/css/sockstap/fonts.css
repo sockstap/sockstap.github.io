@@ -1,0 +1,313 @@
+@font-face {
+  font-family: "satoshi";
+  src: url("/assets/website/fonts/sockstap/satoshi-bold-webfont.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/satoshi-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "satoshi";
+  src: url("/assets/website/fonts/sockstap/satoshi-medium-webfont.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/satoshi-medium-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "satoshi";
+  src: url("/assets/website/fonts/sockstap/satoshi-regular-webfont.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/satoshi-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Canela";
+  src: url("/assets/website/fonts/sockstap/Canela-Regular.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/Canela-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("/assets/website/fonts/sockstap/SofiaProRegular.eot");
+  src: local("Sofia Pro Regular"), local("SofiaProRegular"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("/assets/website/fonts/sockstap/Recoleta-Regular.eot");
+  src: local("Recoleta Regular"), local("Recoleta-Regular"),
+    url("/assets/website/fonts/sockstap/Recoleta-Regular.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/Recoleta-Regular.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/Recoleta-Regular.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/Recoleta-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("/assets/website/fonts/sockstap/Recoleta-Medium.eot");
+  src: local("Recoleta Medium"), local("Recoleta-Medium"),
+    url("/assets/website/fonts/sockstap/Recoleta-Medium.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/Recoleta-Medium.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/Recoleta-Medium.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/Recoleta-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("/assets/website/fonts/sockstap/Recoleta-SemiBold.eot");
+  src: local("Recoleta SemiBold"), local("Recoleta-SemiBold"),
+    url("/assets/website/fonts/sockstap/Recoleta-SemiBold.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/Recoleta-SemiBold.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/Recoleta-SemiBold.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/Recoleta-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("/assets/website/fonts/sockstap/Recoleta-Bold.eot");
+  src: local("Recoleta Bold"), local("Recoleta-Bold"),
+    url("/assets/website/fonts/sockstap/Recoleta-Bold.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/Recoleta-Bold.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/Recoleta-Bold.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/Recoleta-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("/assets/website/fonts/sockstap/Recoleta-Black.eot");
+  src: local("Recoleta Black"), local("Recoleta-Black"),
+    url("/assets/website/fonts/sockstap/Recoleta-Black.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/Recoleta-Black.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/Recoleta-Black.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/Recoleta-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* afnmbtlwb fw jkgwiufhr2d */
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProSemiBold.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Semi Bold"), local("SofiaProSemiBold"),
+    url("/assets/website/fonts/sockstap/SofiaProSemiBold.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProSemiBold.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProSemiBold.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProSemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProRegular-Italic.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Regular Italic"),
+    local("SofiaProRegular-Italic"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular-Italic.eot")
+      format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular-Italic.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular-Italic.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("https://html.fleexstudio.com/consultia/assets/css/plugins/fonts/ofiaProSemiBold-Italic.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Semi Bold Italic"),
+    local("SofiaProSemiBold-Italic"),
+    url("/assets/website/fonts/sockstap/SofiaProSemiBold-Italic.eot")
+      format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProSemiBold-Italic.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProSemiBold-Italic.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProSemiBold-Italic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProLight.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Light"), local("SofiaProLight"),
+    url("/assets/website/fonts/sockstap/SofiaProLight.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProLight.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProLight.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProExtraLight.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro ExtraLight"), local("SofiaProExtraLight"),
+    url("/assets/website/fonts/sockstap/SofiaProExtraLight.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProExtraLight.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProExtraLight.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProMedium-Italic.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Medium Italic"),
+    local("SofiaProMedium-Italic"),
+    url("/assets/website/fonts/sockstap/SofiaProMedium-Italic.eot")
+      format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProMedium-Italic.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProMedium-Italic.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProMedium-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProUltraLight-Italic.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro UltraLight Italic"),
+    local("SofiaProUltraLight-Italic"),
+    url("/assets/website/fonts/sockstap/SofiaProUltraLight-Italic.eot")
+      format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProUltraLight-Italic.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProUltraLight-Italic.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProUltraLight-Italic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProRegular.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Regular"), local("SofiaProRegular"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProMedium.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Medium"), local("SofiaProMedium"),
+    url("/assets/website/fonts/sockstap/SofiaProMedium.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProMedium.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProMedium.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProBold.eot");
+  src: local("Sofia Pro Bold"), local("SofiaProBold"),
+    url("/assets/website/fonts/sockstap/SofiaProBold.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProBold.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProBold.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProExtraLight-Italic.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro ExtraLight Italic"),
+    local("SofiaProExtraLight-Italic"),
+    url("/assets/website/fonts/sockstap/SofiaProExtraLight-Italic.eot")
+      format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProExtraLight-Italic.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProExtraLight-Italic.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProExtraLight-Italic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProLight-Italic.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Light Italic"),
+    local("SofiaProLight-Italic"),
+    url("/assets/website/fonts/sockstap/SofiaProLight-Italic.eot")
+      format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProLight-Italic.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProLight-Italic.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProLight-Italic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProBlack-Italic.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Black Italic"),
+    local("SofiaProBlack-Italic"),
+    url("/assets/website/fonts/sockstap/SofiaProBlack-Italic.eot")
+      format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProBlack-Italic.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProBlack-Italic.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProBlack-Italic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProBlack.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Black"), local("SofiaProBlack"),
+    url("/assets/website/fonts/sockstap/SofiaProBlack.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProBlack.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProBlack.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProBlack.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProUltraLight.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro UltraLight"), local("SofiaProUltraLight"),
+    url("/assets/website/fonts/sockstap/SofiaProUltraLight.eot") format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProUltraLight.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProUltraLight.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProUltraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/assets/website/fonts/sockstap/SofiaProBold-Italic.eot");
+  src: localurl("/assets/website/fonts/sockstap/Sofia Pro Bold Italic"), local("SofiaProBold-Italic"),
+    url("/assets/website/fonts/sockstap/SofiaProBold-Italic.eot")
+      format("embedded-opentype"),
+    url("/assets/website/fonts/sockstap/SofiaProBold-Italic.woff2") format("woff2"),
+    url("/assets/website/fonts/sockstap/SofiaProBold-Italic.woff") format("woff"),
+    url("/assets/website/fonts/sockstap/SofiaProBold-Italic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
