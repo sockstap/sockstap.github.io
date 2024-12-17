@@ -2,11 +2,12 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://sockstap.github.io/news/article-26351.htm" />
+        <link rel="canonical" href="https://sockstap.github.io" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>前端干货别再羡慕别人的Excel啦，教你点击按钮直接打开侧边栏</title>
-        <meta name="description" content="负责技术支持的葡萄又来啦。  三日不见，我们的客户又为我们发来新的问题。 这次我们需要实现的场景是在前端表格环境中，像模板按钮那样，点击之后弹出一个侧边栏，然后通过点击不同的单元格显示不同的内容。 挤" />
+    <title>2024-12归档 - SockSTap免费机场订阅节点官网</title>
+        <meta name="keywords" content="2024-12归档" />
+        <meta name="description" content="2024-12归档" />
         <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
     <!--=====CSS=======-->
     <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
@@ -33,7 +34,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="detail">
+<body data-page="category">
         <section>
         <div id="preloader">
             <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
@@ -134,9 +135,9 @@
             <div class="row">
                 <div class="col-lg-10 m-auto">
                     <div class="inner-title text-center">
-                        <h1>前端干货别再羡慕别人的Excel啦，教你点击按钮直接打开侧边栏</h1>
+                        <h1>2024-12 归档</h1>
                         <p>
-                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                          <a href="/">首页</a> / 2024-12 归档
                         </p>
                     </div>
                 </div>
@@ -149,12 +150,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<p>负责技术支持的葡萄又来啦。</p> <p></p> <p>三日不见，我们的客户又为我们发来新的问题。</p> <p>这次我们需要实现的场景是在前端表格环境中，像模板按钮那样，点击之后弹出一个侧边栏，然后通过点击不同的单元格显示不同的内容。</p> <p>挤接下来我们就带大家一起来看看，如何在前端电子表格中实现这样的功能。</p> <h2 id="实例操作">实例操作</h2> <p>首先，常规地我们先常规地在编辑器的ribbon上插入一个按钮。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/f2830490d3688f23f2dfe20da50c688f.jpg" alt="前端干货别再羡慕别人的Excel啦，教你点击按钮直接打开侧边栏"></p> <p>按钮插入完毕后，我们来创建一个侧边栏模板。这个侧边栏模板其实是一个template对象，大家可以通过getTemplate去取一些常见的模板，观察它的结构。</p> <p>比较常用的元素有：templateName和content。其中content是一个数组，里面可以包含不同原子类型的对象，。关于原子类型后面我们会为大家介绍更多相关内容，大家在这里可以简单将原子组件理解为新增template的基本单位。</p> <p>由于内容容量很多，我们这里只截取部分为大家介绍。content里面的第一个对应一般就是侧边栏的标题，我们可以指定一个类型为TextBlock的原子类型，然后通过css样式给这个标题添加样式。text就对应标题的文本。在第二个对象中我们指定了一个容器类型名为"Container"，里面包含一些子组件，可以可以设置其margin边距、width宽度等，除此之外还可以设置bindingPath，有点类似数据绑定，这个参数是可以选择是否动态展示数据的前提。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/336271dfd0d8eb82b2a546ac6fe3ec90.jpg" alt="前端干货别再羡慕别人的Excel啦，教你点击按钮直接打开侧边栏"></p> <p>将template创建完成后，接下来我们需要注册该模板。</p> <pre><code>GC.Spread.Sheets.Designer.registerTemplate(   "auditOptionTemplate",   auditTemplate );</code></pre> <p>template除了有UI外，还需要有对应的command，我们也需要去定义命令对象。有一个需要注意的属性需要注意的是visibleContext，这个用于控制模板的显示和关闭，比较关键。然后就是处理侧边栏的状态的getState了，在这里，我们可以去对侧边栏的内容做一个更改。如下面的text1和text2就是前面提到的bindingPath，当我们点击到指定的单元格时，侧边栏就会显示对应值。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/785df6a02df14a4430965d278cd311d7.jpg" alt="前端干货别再羡慕别人的Excel啦，教你点击按钮直接打开侧边栏"></p> <p>再接着，将这个ui和command规整为一个侧边栏对象中。</p> <pre><code>var sidePanelsAuditConfig = {   position: "right",   width: "315px",   command: "auditOptionPanel",   uiTemplate: "auditOptionTemplate",   showCloseButton: true, };</code></pre> <p>并且添加到我们的config里面。</p> <pre><code> Object.assign(config.commandMap, sidePanelsAuditCommands);</code></pre> <p>最后再回到前面定义的按钮的对象中将控制侧边栏显隐的代码加上，这样就全部大功告成啦。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/d596e6aedabdda0f86beaf735f5a3456.jpg" alt="前端干货别再羡慕别人的Excel啦，教你点击按钮直接打开侧边栏"></p> <p>大家感兴趣可以下载demo试试：</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://gcdn.grapecity.com.cn/forum.php?mod=attachment&amp;aid=MTk2MTcwfGJkY2EwYjI0fDE2NTAyNjIwNTJ8NjI2NzZ8MTQyNzIx"  target="_blank" rel="nofollow">https://gcdn.grapecity.com.cn/forum.php?mod=attachment&amp;aid=MTk2MTcwfGJkY2EwYjI0fDE2NTAyNjIwNTJ8NjI2NzZ8MTQyNzIx</a></p> <p></p> 			                <div class="clearfix"></div>
-                <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-25872.htm">宠物粮食销售文案（宠物粮食销售文案简短）</a></p>
-                                        <p>下一个：<a href="/news/article-26353.htm">宠物领养协议模板下载电子版（宠物领养协议书电子版）</a></p>
-                                    </div>
+                    <div class="xcblog-blog-list">
+                                              <div class="row item xcblog-blog-item" data-date="2024-12-01">
+                            <div class="col-md-3">
+                                <div class="about-bg-21">
+                                    <a href="/free-nodes/2024-12-1-free-node-subscribe.htm" class="xcblog-blog-url">
+                                        <img src="/uploads/20241105/5e3e32ad8d145a22457db7d83aa4063c.webp" alt="SockSTap节点订阅每天更新23M/S免费节点订阅链接" class="img-fluid">
+                                    </a>
                                 </div>
+                            </div>
+                            <div class="col-md-9">
+                                <a href="/free-nodes/2024-12-1-free-node-subscribe.htm" class="xcblog-blog-url">
+                                    <h3 class="xcblog-blog-title">SockSTap节点订阅每天更新23M/S免费节点订阅链接</h3>
+                                </a>
+                                <p>这一次的节点更新覆盖了美国、加拿大、新加坡、韩国、日本、香港、欧洲等地区,最高速度可达23 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
+                            </div>
+                        </div>
+                        
+                        <ul class="pagination"><li><a href="/date/2024-12/page-5.htm">&laquo;</a></li> <li><a href="/date/2024-12/">1</a></li><li><a href="/date/2024-12/page-2.htm">2</a></li><li><a href="/date/2024-12/page-3.htm">3</a></li><li><a href="/date/2024-12/page-4.htm">4</a></li><li><a href="/date/2024-12/page-5.htm">5</a></li><li class="active"><span>6</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                    </div>
+                </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
     <div class="panel-heading">
@@ -162,16 +176,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-25408.htm" title="兽用疫苗保质期多久（兽用疫苗常温下能放多久）">兽用疫苗保质期多久（兽用疫苗常温下能放多久）</a></li>
-                        <li class="py-2"><a href="/news/article-27267.htm" title="动物疫苗销售需要什么手续和条件呢（卖动物疫苗利润有多高）">动物疫苗销售需要什么手续和条件呢（卖动物疫苗利润有多高）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新22.3M/S免费节点订阅链接">SockSTap节点订阅每天更新22.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-1-free-node-subscribe.htm" title="SockSTap节点订阅每天更新23M/S免费节点订阅链接">SockSTap节点订阅每天更新23M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-15-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新20.6M/S免费节点订阅链接">SockSTap节点订阅每天更新20.6M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-24010.htm" title="宠物粮食销售需要许可证吗 宠物粮食销售需要许可证吗现在">宠物粮食销售需要许可证吗 宠物粮食销售需要许可证吗现在</a></li>
-                        <li class="py-2"><a href="/news/article-19886.htm" title="中国宠物粮生产工厂有哪些企业家（中国宠物粮生产工厂有哪些企业家名单）">中国宠物粮生产工厂有哪些企业家（中国宠物粮生产工厂有哪些企业家名单）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新20M/S免费节点订阅链接">SockSTap节点订阅每天更新20M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-node-share.htm" title="SockSTap节点订阅每天更新22.4M/S免费节点订阅链接">SockSTap节点订阅每天更新22.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-13-node-share.htm" title="SockSTap节点订阅每天更新20.7M/S免费节点订阅链接">SockSTap节点订阅每天更新20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-7-free-node-subscribe.htm" title="SockSTap节点订阅每天更新19.8M/S免费节点订阅链接">SockSTap节点订阅每天更新19.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-node-share.htm" title="SockSTap节点订阅每天更新20.2M/S免费节点订阅链接">SockSTap节点订阅每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-21260.htm" title="动物疫苗查询系统怎么查不到信息（动物疫苗批号查询系统）">动物疫苗查询系统怎么查不到信息（动物疫苗批号查询系统）</a></li>
                         <li class="py-2"><a href="/news/article-25870.htm" title="宠物领养协议合同电子版有效吗怎么写的 宠物领养协议合同电子版有效吗怎么写的啊">宠物领养协议合同电子版有效吗怎么写的 宠物领养协议合同电子版有效吗怎么写的啊</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-18-node-share.htm" title="SockSTap节点订阅每天更新19.2M/S免费节点订阅链接">SockSTap节点订阅每天更新19.2M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-24947.htm" title="猫三联打的时间（猫三联***时间）">猫三联打的时间（猫三联***时间）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-free-subscribe-node.htm" title="SockSTap节点订阅每天更新19.1M/S免费节点订阅链接">SockSTap节点订阅每天更新19.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-free-node-subscribe.htm" title="SockSTap节点订阅每天更新19.7M/S免费节点订阅链接">SockSTap节点订阅每天更新19.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-node-share.htm" title="SockSTap节点订阅每天更新20.3M/S免费节点订阅链接">SockSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
