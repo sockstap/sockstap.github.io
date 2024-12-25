@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-31033.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linux清理磁盘文件夹方法</title>
+        <meta name="description" content="话不多说上命令   查看磁盘使用情况 : df -h 看到需要清理时，一般是使用率达到90%的时候就要清理了   查询当前目录下一级子目录大小：du -h --max-depth=1 这个命令会显示当" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="#">关于</a></li>
+            </ul>
+            <ul class="mobile-nav-list">
+                <li><a href="#">联系</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>linux清理磁盘文件夹方法</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220605/fcaf1f645414fd972dd84ca57f59111a.jpg" alt="linux清理磁盘文件夹方法" style="max-width:100%;"/></p> <p>话不多说上命令</p> <ol> <li> <p>查看磁盘使用情况 : df -h<br /> 看到需要清理时，一般是使用率达到90%的时候就要清理了</p> </li> <li> <p>查询当前目录下一级子目录大小：du -h --max-depth=1<br /> 这个命令会显示当前目录下子目录的大小，清楚的看到需要清理哪个文件夹，然后一层层找下去</p> </li> <li> <p>删除文件夹下所有文件： rm -rf *<br /> 这个命令会清楚当前文件夹下的所有数据，但是这个命令<strong>慎用</strong>，因为它与格式化硬盘的命令太像 (rm -rf /*)</p> </li> <li> <p>再次使用df -h命令就能看到磁盘使用率已经降下来了</p> </li> </ol> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30551.htm">上海宠物领养救助站是真的吗（上海宠物领养机构）</a></p>
+                                        <p>下一个：<a href="/news/article-31036.htm">国内狗粮十大品牌（国内十大知名狗粮品牌）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-5-free-subscribe-node.htm" title="SockSTap节点订阅每天更新18.8M/S免费节点订阅链接">SockSTap节点订阅每天更新18.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-node-share-links.htm" title="SockSTap节点订阅每天更新18.3M/S免费节点订阅链接">SockSTap节点订阅每天更新18.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-26353.htm" title="宠物领养协议模板下载电子版（宠物领养协议书电子版）">宠物领养协议模板下载电子版（宠物领养协议书电子版）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-13-node-share.htm" title="SockSTap节点订阅每天更新20.7M/S免费节点订阅链接">SockSTap节点订阅每天更新20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-node-share.htm" title="SockSTap节点订阅每天更新20.8M/S免费节点订阅链接">SockSTap节点订阅每天更新20.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-22171.htm" title="宠物医师资格证可以自考吗现在可以考吗（宠物医师资格证可以自考吗现在可以考吗知乎）">宠物医师资格证可以自考吗现在可以考吗（宠物医师资格证可以自考吗现在可以考吗知乎）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-node-share-links.htm" title="SockSTap节点订阅每天更新22.7M/S免费节点订阅链接">SockSTap节点订阅每天更新22.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-node-share.htm" title="SockSTap节点订阅每天更新20.1M/S免费节点订阅链接">SockSTap节点订阅每天更新20.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-30026.htm" title="妙三多疫苗多久生效（妙三多疫苗多久打一针）">妙三多疫苗多久生效（妙三多疫苗多久打一针）</a></li>
+                        <li class="py-2"><a href="/news/article-24009.htm" title="上海宠物医院招聘管吃管住（宠物医院 上海）">上海宠物医院招聘管吃管住（宠物医院 上海）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
