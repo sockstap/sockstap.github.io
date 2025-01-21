@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://sockstap.github.io/news/article-43179.htm" />
@@ -19,6 +19,22 @@
     <meta property="og:updated_time" content="2025-01-19T07:11:14" />
         <meta property="og:description" content="&nbsp;细粒度定制化JSON返回字段，精确控制每一个接口方法返回的字段 1. 创建注解CustomReturnJson 标注在controller 的方法上。 示例：     @RequestMa" />
         
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="实现 ResponseBodyAdvice 定制化JSON 返回字段">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!--=====CSS=======-->
     <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
@@ -164,6 +180,7 @@
                   				  				  				<div id="content_views" class="htmledit_views"> <p>&nbsp;细粒度定制化JSON返回字段，精确控制每一个接口方法返回的字段</p> <p>1. 创建注解CustomReturnJson 标注在controller 的方法上。 示例：</p> <pre class="has"><code class="language-java">    @RequestMapping("/testJson")     @ResponseBody     @CustomReturnJson(include = {"id","topicName","topicImg"})     public Object testJson(@RequestParam("name")String name){         Topic topic = topicService.getByTopicName(name);         return ResultVO.success(topic);     }</code></pre> <p>只返回 id topicName,topicImg 字段</p> <pre class="has"><code class="language-java">import java.lang.annotation.*;  /**  * @author XXX  * Date: 2019/4/11  * Description:该注解配合 @ResponseBody 一起使用来细粒度定制返回的json @see {CustomReturnResponseBody.class}  */ @Target({ElementType.METHOD}) @Retention(RetentionPolicy.RUNTIME) @Documented public @interface CustomReturnJson {      /**      * 返回的json包含哪些字段      */     String[] include() default {};  } </code></pre> <p>&nbsp;2.核心逻辑就是实现 ResponseBodyAdvice&nbsp; 方法beforeBodyWrite ，在json返回前处理</p> <pre class="has"><code class="language-java">import com.alibaba.druid.support.json.JSONUtils; import com.alibaba.fastjson.JSON; import com.alibaba.fastjson.serializer.BeanContext; import com.alibaba.fastjson.serializer.ContextValueFilter; import com.linktime.unitimes.annotation.CustomReturnJson; import com.linktime.unitimes.vo.ResultVO; import lombok.extern.slf4j.Slf4j; import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty; import org.springframework.core.MethodParameter; import org.springframework.http.MediaType; import org.springframework.http.server.ServerHttpRequest; import org.springframework.http.server.ServerHttpResponse; import org.springframework.lang.Nullable; import org.springframework.web.bind.annotation.ControllerAdvice; import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;  import java.util.ArrayList; import java.util.Arrays; import java.util.List; import java.util.stream.Collectors;  /**  * @author liuxun  * Date: 2019/4/11  * Description: 用来控制定制化json 返回  */ @ControllerAdvice @ConditionalOnProperty(name = "CUSTOM_RETURN_JSON_ADVICE",havingValue = "true") @Slf4j public class CustomReturnJsonAdvice implements ResponseBodyAdvice {      @Override     public boolean supports(MethodParameter methodParameter, Class aClass) {         return methodParameter.getMethodAnnotation(CustomReturnJson.class) != null;     }      @Nullable     @Override     public Object beforeBodyWrite(@Nullable Object body, MethodParameter methodParameter, MediaType mediaType, Class aClass, ServerHttpRequest request, ServerHttpResponse response) {          if(body != null &amp;&amp; body instanceof ResultVO){             try {                  ResultVO vo = (ResultVO) body;                 Object data = vo.getData();                  CustomReturnJson methodAnnotation = methodParameter.getMethodAnnotation(CustomReturnJson.class);                 String[] include = methodAnnotation.include();                 List&lt;String&gt; collect = Arrays.stream(include).collect(Collectors.toList());                  ContextValueFilter valueFilter = new ContextValueFilter () {                     @Override                     public Object process(BeanContext context, Object object, String name, Object value) {                         if(collect.contains(name)){                             if(value == null){                                 return "";                             }                             return value;                         }else {                             return null;                         }                     }                 };                 String jsonOutput = JSON.toJSONString(data,valueFilter);                 Object parse = JSONUtils.parse(jsonOutput);                 vo.setData(parse);                 return vo;             } catch (Exception e) {                 log.error("CustomReturnResponseBody方法出错",e);                 // 如果出错,原样返回。(就当该不存在这个流程)             }         }          return body;     }  }</code></pre> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-43178.htm">python代码模板</a></p>
+                                        <p>下一个：<a href="/news/article-43676.htm">三国杀,台词（三国杀台词诸葛亮）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -173,16 +190,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-9-node-share.htm" title="SockSTap节点订阅每天更新22.4M/S免费节点订阅链接">SockSTap节点订阅每天更新22.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-21761.htm" title="Vite2+Vue3+ts的eslint设置踩坑">Vite2+Vue3+ts的eslint设置踩坑</a></li>
-                        <li class="py-2"><a href="/news/article-38709.htm" title="猫批发价格（全国猫咪低价批发零售）">猫批发价格（全国猫咪低价批发零售）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-1-free-node-subscribe.htm" title="SockSTap节点订阅每天更新23M/S免费节点订阅链接">SockSTap节点订阅每天更新23M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-31033.htm" title="linux清理磁盘文件夹方法">linux清理磁盘文件夹方法</a></li>
-                        <li class="py-2"><a href="/news/article-37684.htm" title="动物疫苗间隔多久打一次最好呢 动物疫苗间隔多久打一次最好呢视频">动物疫苗间隔多久打一次最好呢 动物疫苗间隔多久打一次最好呢视频</a></li>
-                        <li class="py-2"><a href="/news/article-27726.htm" title="动物医院诊疗范围包括哪些 动物医院怎么样">动物医院诊疗范围包括哪些 动物医院怎么样</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-21-node-share-links.htm" title="SockSTap节点订阅每天更新18.9M/S免费节点订阅链接">SockSTap节点订阅每天更新18.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新18.2M/S免费节点订阅链接">SockSTap节点订阅每天更新18.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-25870.htm" title="宠物领养协议合同电子版有效吗怎么写的 宠物领养协议合同电子版有效吗怎么写的啊">宠物领养协议合同电子版有效吗怎么写的 宠物领养协议合同电子版有效吗怎么写的啊</a></li>
                         <li class="py-2"><a href="/news/article-36266.htm" title="宠物粮食品牌排名前十名有哪些呢（国内十大宠物粮食品牌）">宠物粮食品牌排名前十名有哪些呢（国内十大宠物粮食品牌）</a></li>
-                        <li class="py-2"><a href="/news/article-20347.htm" title="动物疫苗经销商电话号码（动物疫苗批发）">动物疫苗经销商电话号码（动物疫苗批发）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-9-node-share-links.htm" title="SockSTap节点订阅每天更新19.5M/S免费节点订阅链接">SockSTap节点订阅每天更新19.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-38227.htm" title="麦富迪狗粮怎么样,口碑好不好（麦富迪的狗粮怎么样?）">麦富迪狗粮怎么样,口碑好不好（麦富迪的狗粮怎么样?）</a></li>
+                        <li class="py-2"><a href="/news/article-24009.htm" title="上海宠物医院招聘管吃管住（宠物医院 上海）">上海宠物医院招聘管吃管住（宠物医院 上海）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新18.1M/S免费节点订阅链接">SockSTap节点订阅每天更新18.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-42176.htm" title="一片枫叶打一成语 一片枫叶打一成语是什么">一片枫叶打一成语 一片枫叶打一成语是什么</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-node-share-links.htm" title="SockSTap节点订阅每天更新20.3M/S免费节点订阅链接">SockSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-22171.htm" title="宠物医师资格证可以自考吗现在可以考吗（宠物医师资格证可以自考吗现在可以考吗知乎）">宠物医师资格证可以自考吗现在可以考吗（宠物医师资格证可以自考吗现在可以考吗知乎）</a></li>
                     </ul>
     </div>
 </div>
@@ -194,7 +211,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
