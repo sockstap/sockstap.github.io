@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-53848.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.NET宝藏API之：IHostedService，后台任务执行</title>
+        <meta name="description" content="我们在项目开发的过程中可能会遇到类似后台定时任务的需求，比如消息队列的消费者。 按照.NetF时的开发习惯首先想到的肯定是Windows Service，拜托，都什么年代了还用Windows服务（小声" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-53848.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content=".NET宝藏API之：IHostedService，后台任务执行" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/d4f050a36c81f79a36ac9cc4902b87de.webp" />
+        <meta property="og:release_date" content="2025-02-09T10:06:01" />
+    <meta property="og:updated_time" content="2025-02-09T10:06:01" />
+        <meta property="og:description" content="我们在项目开发的过程中可能会遇到类似后台定时任务的需求，比如消息队列的消费者。 按照.NetF时的开发习惯首先想到的肯定是Windows Service，拜托，都什么年代了还用Windows服务（小声" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content=".NET宝藏API之：IHostedService，后台任务执行">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>.NET宝藏API之：IHostedService，后台任务执行</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>我们在项目开发的过程中可能会遇到类似后台定时任务的需求，比如消息队列的消费者。</p> <p>按照<code>.NetF</code>时的开发习惯首先想到的肯定是<code>Windows Service</code>，拜托，都什么年代了还用<code>Windows服务</code>（小声bb）</p> <p>不用<code>Windows服务</code>这不是还有<code>Quartz</code>之流的包嘛，也不是不行，但是随便一点小需求就上这么重的包，是不是有点大材小用了。</p> <p>除了上面的方案，<code>Task.Run</code>也不失为一个好方法，方便简单，直接在管道：</p> <pre><code>Task.Run(() =&gt; { 	while (true) 	{ 		Console.WriteLine("running"); 		Thread.Sleep(1000); 	} });</code></pre> <p><strong>Ok，搞定</strong></p> <p>嗯......也不是不行，总觉得缺了点什么？难道是优雅？</p> <h3 id="ihostedservice">IHostedService</h3> <p><code>IHostedService</code>微软给的定义如下，大致的意思就是：<strong>定义主机托管对象的方法</strong>。</p> <pre><code>Defines methods for objects that are managed by the host.</code></pre> <p>下面我们就来实现一下：</p> <pre><code>public class WorkService : IHostedService, IDisposable { 	private Timer timer; 	public void Dispose() 	{ 		timer.Dispose(); 	}  	public Task StartAsync(CancellationToken cancellationToken) 	{ 		Console.WriteLine("start"); 		timer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(1)); 		return Task.CompletedTask; 	}  	public Task StopAsync(CancellationToken cancellationToken) 	{ 		Console.WriteLine("end"); 		timer?.Change(Timeout.Infinite, 0); 		return Task.CompletedTask; 	}  	private void DoWork(object state) 	{ 		Console.WriteLine("running"); 	} }</code></pre> <p>然后在<code>ConfigureServices</code> 注册：</p> <pre><code>services.AddHostedService&lt;WorkService&gt;();</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/85f3d279400804b64429f886c160ccf0.jpg" alt=".NET宝藏API之：IHostedService，后台任务执行"></p> <p>是不是既优雅又<code>so easy</code>。</p> <p>猴：放屁，本来几行代码就能解决的，你这用了这么多行才实现，优雅个屁。</p> <p>别着急，这不是赠送了两个功能嘛：<code>start</code>，<code>end</code>，很划算的啦。</p> <p>猴：我不要这两个功能，我只要执行任务，你这个就是不行。</p> <p>得，不要就不要，微软大大都给你准备好了。</p> <h3 id="backgroundservice">BackgroundService</h3> <p><code>BackgroundService</code>是微软封装的一个<code>IHostedService</code>派生类，顾名思义：<strong>后台服务</strong>嘛，往下看：</p> <pre><code>public class WorkService : BackgroundService { 	protected async override Task ExecuteAsync(CancellationToken stoppingToken) 	{ 		while(!stoppingToken.IsCancellationRequested) 		{ 			Console.WriteLine("running"); 			await Task.Delay(1000, stoppingToken); 		} 	} }</code></pre> <p>还是一样的注册：<code>services.AddHostedService&lt;WorkService&gt;();</code>，运行结果就...还是放一下吧。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/7d17981f46d548e30ae318990a87f316.jpg" alt=".NET宝藏API之：IHostedService，后台任务执行"></p> <p>这下够优雅了吧。</p> <p>猴：那还有更优雅的吗？</p> <p>年轻人，要知足（其实我也不知道了）</p> <p>因为<code>BackgroundService</code> 是<code>IHostedService</code>的派生类，如果你想要使用<code>start</code>和<code>end</code>也是可以的哦。</p> <pre><code>public override Task StartAsync(CancellationToken cancellationToken) { 	Console.WriteLine("start"); 	return base.StartAsync(cancellationToken); }  public override Task StopAsync(CancellationToken cancellationToken) { 	Console.WriteLine("end"); 	return base.StopAsync(cancellationToken); }</code></pre> <p>好了，这期的宝藏<code>API</code>就到这了，下期再见哦，如果有下期的话。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53846.htm">Vue滑块验证码组件anji-captcha的使用</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-39190.htm" title="蝴蝶犬幼犬（蝴蝶犬幼犬像土狗）">蝴蝶犬幼犬（蝴蝶犬幼犬像土狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-node-share.htm" title="SockSTap节点订阅每天更新19.1M/S免费节点订阅链接">SockSTap节点订阅每天更新19.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-30551.htm" title="上海宠物领养救助站是真的吗（上海宠物领养机构）">上海宠物领养救助站是真的吗（上海宠物领养机构）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新21M/S免费节点订阅链接">SockSTap节点订阅每天更新21M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-52233.htm" title="宠物寄养协议模板（宠物寄养协议样本简单）">宠物寄养协议模板（宠物寄养协议样本简单）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新22.3M/S免费节点订阅链接">SockSTap节点订阅每天更新22.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-30550.htm" title="动物疫苗价格排行榜最新图片大全集 动物疫苗价格排行榜最新图片大全集">动物疫苗价格排行榜最新图片大全集 动物疫苗价格排行榜最新图片大全集</a></li>
+                        <li class="py-2"><a href="/news/article-51196.htm" title="宠物粮食批发进货渠道有哪些呢图片视频介绍（宠物粮食批发进货渠道有哪些呢图片视频介绍大全）">宠物粮食批发进货渠道有哪些呢图片视频介绍（宠物粮食批发进货渠道有哪些呢图片视频介绍大全）</a></li>
+                        <li class="py-2"><a href="/news/article-23543.htm" title="vue实现页面刷新动画_vue.js_">vue实现页面刷新动画_vue.js_</a></li>
+                        <li class="py-2"><a href="/news/article-33376.htm" title="办理动物医院需要什么手续和证件和证件材料（开办一间动物医院需要什么资质）">办理动物医院需要什么手续和证件和证件材料（开办一间动物医院需要什么资质）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
