@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-56049.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编码练习：JavaScript 点击下拉列表显示相关信息</title>
+        <meta name="description" content="问题描述 点击下拉列表中的选项，加载选项对应的列表信息。 给定HTML： &lt;html&gt;  &lt;head&gt;  &lt;/head&gt;  &lt;body&gt; 	&lt;h1" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-56049.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="编码练习：JavaScript 点击下拉列表显示相关信息" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/5f61076802c4760802c35bdf532915f3.webp" />
+        <meta property="og:release_date" content="2025-02-13T03:11:20" />
+    <meta property="og:updated_time" content="2025-02-13T03:11:20" />
+        <meta property="og:description" content="问题描述 点击下拉列表中的选项，加载选项对应的列表信息。 给定HTML： &lt;html&gt;  &lt;head&gt;  &lt;/head&gt;  &lt;body&gt; 	&lt;h1" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="编码练习：JavaScript 点击下拉列表显示相关信息">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>编码练习：JavaScript 点击下拉列表显示相关信息</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>问题描述</h2> <p>点击下拉列表中的选项，加载选项对应的列表信息。</p> <p>给定HTML：</p> <pre><code class="language-html">&lt;html&gt;  &lt;head&gt;  &lt;/head&gt;  &lt;body&gt; 	&lt;h1&gt;A few of the Game of Thrones characters&lt;/h1&gt; 	&lt;form&gt;   &lt;label for="house"&gt;House&lt;/label&gt;:   &lt;select name="house" id="house"&gt;       &lt;option value="" selected&gt;Select a house&lt;/option&gt;   &lt;/select&gt; 	&lt;/form&gt;    &lt;ul id="characters"&gt;&lt;/ul&gt;   &lt;/body&gt; &lt;/html&gt;</code></pre> <p>显示结果：</p> <p><img fetchpriority="high" decoding="async" alt="" height="210" src="http://img.555519.xyz/uploads/20230207/4802385e8ad905bb8ea4af942448b176.jpg"></p> <h2>&nbsp;解决方法</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我的：</p> <pre><code class="language-javascript">// Write your code here const houseElement = document.createElement("option"); houseElement.textContent = "Lannister"; houseElement.id = "Lannister"; houseElement.value="Lannister"; document.getElementById("house").appendChild(houseElement); document.getElementById("house").addEventListener("change",e=&gt;{     const ui1=document.createElement("li");     ui1.textContent="Tywin";        const ui2=document.createElement("li");     ui2.textContent="Cersei";     const ui3=document.createElement("li");     ui3.textContent="Jaime";     let ui4=document.createElement("li");     ui4.textContent="Tyrion";      if(e.target.value === "Lannister")     {         document.getElementById("characters").appendChild(ui1);         document.getElementById("characters").appendChild(ui2);         document.getElementById("characters").appendChild(ui3);         document.getElementById("characters").appendChild(ui4);     } });</code></pre> <p>显示效果：</p> <p><img decoding="async" alt="" height="205" src="http://img.555519.xyz/uploads/20230207/28f4bc72f420bf2e74c765cd4a0adc6d.jpg"></p> <p>&nbsp;选中这个选项会加载下面的选项</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 参考答案：</p> <pre><code class="language-javascript">/* Game of Thrones characters */  // Character list. Each house has a name and a code const houses = [   {     code: "ST",     name: "Stark"   },   {     code: "LA",     name: "Lannister"   },   {     code: "BA",     name: "Baratheon"   },   {     code: "TA",     name: "Targaryen"   } ];  // Return an array of characters belonging to a house const getCharacters = houseCode =&gt; {   switch (houseCode) {     case "ST":       return ["Eddard", "Catelyn", "Robb", "Sansa", "Arya", "Jon Snow"];     case "LA":       return ["Tywin", "Cersei", "Jaime", "Tyrion"];     case "BA":       return ["Robert", "Stannis", "Renly"];     case "TA":       return ["Aerys", "Daenerys", "Viserys"];     default:       return []; // Empty array   } };  // Create and return an HTML &lt;option&gt; tag const createOptionElement = (text, value) =&gt; {   const element = document.createElement("option");   element.textContent = text;   element.value = value;   return element; };  // Create and return and HTML &lt;li&gt; tag const createLiElement = text =&gt; {   const element = document.createElement("li");   element.textContent = text;   return element; };  const houseElement = document.querySelector("select");  // Fill the house list houses.forEach(house =&gt; {   houseElement.appendChild(createOptionElement(house.name, house.code)); });  // Handle house change event houseElement.addEventListener("change", e =&gt; {   // The value of the event target is the house code   const characters = getCharacters(e.target.value);   const characterElement = document.getElementById("characters");   // Empty the list   characterElement.innerHTML = "";   // Add each character to the list   characters.forEach(character =&gt; {     characterElement.appendChild(createLiElement(character));   }); });</code></pre> <p>效果：</p> <p><img decoding="async" alt="" height="197" src="http://img.555519.xyz/uploads/20230207/9bbc57e06d720987f36ad40eda7407fd.jpg"></p> <p>&nbsp;<img loading="lazy" decoding="async" alt="" height="239" src="http://img.555519.xyz/uploads/20230207/1f165fe0d215d298314014a9af838089.jpg"></p> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-55512.htm">畜牧局买疫苗 畜牧局买疫苗怎么买</a></p>
+                                        <p>下一个：<a href="/news/article-56050.htm">58同城免费领养狗狗送到家（58同城免费领养狗狗送到家附近赠送狗狗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-55512.htm" title="畜牧局买疫苗 畜牧局买疫苗怎么买">畜牧局买疫苗 畜牧局买疫苗怎么买</a></li>
+                        <li class="py-2"><a href="/news/article-53846.htm" title="Vue滑块验证码组件anji-captcha的使用">Vue滑块验证码组件anji-captcha的使用</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新19M/S免费节点订阅链接">SockSTap节点订阅每天更新19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-24009.htm" title="上海宠物医院招聘管吃管住（宠物医院 上海）">上海宠物医院招聘管吃管住（宠物医院 上海）</a></li>
+                        <li class="py-2"><a href="/news/article-30026.htm" title="妙三多疫苗多久生效（妙三多疫苗多久打一针）">妙三多疫苗多久生效（妙三多疫苗多久打一针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-11-node-share-links.htm" title="SockSTap节点订阅每天更新18.3M/S免费节点订阅链接">SockSTap节点订阅每天更新18.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-node-share.htm" title="SockSTap节点订阅每天更新20.3M/S免费节点订阅链接">SockSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-31974.htm" title="自家的猫抓出血（自家的猫抓出血了要打针吗）">自家的猫抓出血（自家的猫抓出血了要打针吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新20.6M/S免费节点订阅链接">SockSTap节点订阅每天更新20.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-35763.htm" title="宠物疫苗可以上地铁吗北京（北京宠物猫可以上地铁吗）">宠物疫苗可以上地铁吗北京（北京宠物猫可以上地铁吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
