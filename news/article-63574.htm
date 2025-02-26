@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-63574.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java 使用 Maven BOM 统一管理版本号_在线工具</title>
+        <meta name="description" content="一个中大型的 Java 基础框架项目往往包含许多 JAR 包，如果将这些 JAR 包单独发布给业务开发使用，这些不同版本 JAR 包间的兼容性维护将变得十分麻烦。为了解决这个问题，可以让一个特殊的模块" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-63574.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="Java 使用 Maven BOM 统一管理版本号_在线工具" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/49ca11688a81e9825f3e861b2767ad79.webp" />
+        <meta property="og:release_date" content="2025-02-26T08:36:13" />
+    <meta property="og:updated_time" content="2025-02-26T08:36:13" />
+        <meta property="og:description" content="一个中大型的 Java 基础框架项目往往包含许多 JAR 包，如果将这些 JAR 包单独发布给业务开发使用，这些不同版本 JAR 包间的兼容性维护将变得十分麻烦。为了解决这个问题，可以让一个特殊的模块" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java 使用 Maven BOM 统一管理版本号_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>Java 使用 Maven BOM 统一管理版本号_在线工具</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>一个中大型的 Java 基础框架项目往往包含许多 JAR 包，如果将这些 JAR 包单独发布给业务开发使用，这些不同版本 JAR 包间的兼容性维护将变得十分麻烦。为了解决这个问题，可以让一个特殊的模块引用这些 JAR 包，将一组 JAR 包兼容的版本号定义在这个模块中，对外发布时只发布这个特殊模块。这个特殊模块就是 BOM(Bill Of Materials)。</p> <p>著名的 Spring Boot 就使用了这种方式来管理版本号，这个模块就是 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/spring-boot-dependencies"  target="_blank"  rel="nofollow">spring-boot-dependencies</a>，用户在使用 Spring Boot Starter 相关依赖时引入特定版本的 spring-boot-dependencies，然后在引入其它依赖时只需要声明 group 和 name 即可，不需要再指定版本号了。当然，在 Gradle 中使用 Spring Boot 插件，或者在 Maven 中使用 spring-boot-starter-parent 作为父模块也能够达到类似的效果。</p> <p>本文将介绍如何通过 Gradle 来制作一个 BOM 以及如何在 Gradle 中使用 BOM。作为 Maven 中的一个概念，也可以使用 Maven 也可以制作和使用 BOM，但本文不涉及。</p> <h2 id="1-bom-介绍">1. BOM 介绍</h2> <p>BOM (Bill Of Material) 是 Maven 仓库中的一个概念，它本质也是一个可被引用的包，但不包含代码，只是声明了一系列其它包。例如：Maven 中央仓库中的 spring-boot-dependencies](<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/2.4.4/"  target="_blank"  rel="nofollow">https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/2.4.4/</a>) 包。它只有一个 <code>.pom</code> 文件。</p> <p>下面是 Maven 官网上的一个简单的 BOM 的 <code>.pom</code> 文件：</p> <pre><code class="language-xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;   &lt;groupId&gt;com.test&lt;/groupId&gt;   &lt;artifactId&gt;bom&lt;/artifactId&gt;   &lt;version&gt;1.0.0&lt;/version&gt;   &lt;packaging&gt;pom&lt;/packaging&gt;   &lt;properties&gt;     &lt;project1Version&gt;1.0.0&lt;/project1Version&gt;     &lt;project2Version&gt;1.0.0&lt;/project2Version&gt;   &lt;/properties&gt;     &lt;dependencyManagement&gt;     &lt;dependencies&gt;       &lt;dependency&gt;         &lt;groupId&gt;com.test&lt;/groupId&gt;         &lt;artifactId&gt;project1&lt;/artifactId&gt;         &lt;version&gt;${project1Version}&lt;/version&gt;       &lt;/dependency&gt;       &lt;dependency&gt;         &lt;groupId&gt;com.test&lt;/groupId&gt;         &lt;artifactId&gt;project2&lt;/artifactId&gt;         &lt;version&gt;${project2Version}&lt;/version&gt;       &lt;/dependency&gt;     &lt;/dependencies&gt;   &lt;/dependencyManagement&gt;     &lt;modules&gt;     &lt;module&gt;parent&lt;/module&gt;   &lt;/modules&gt; &lt;/project&gt; </code></pre> <p>这个文件声明了两个包（project1 和 project2）及其版本号，和一般 .pom 文件中的声明不同的是，<dependencies> 节点外面还包含了一层 <dependencymanagement> 节点。以上就是 BOM 包中最核心的文件的基本结构了；基于 Gradle 发布 BOM 包的本质就是生成这样的一个文件。</dependencymanagement></dependencies></p> <h2 id="2-使用-gradle-制作一个-bom">2. 使用 Gradle 制作一个 BOM</h2> <p>这里我们假定要创建一个 BOM，用来统一管理三方 Java 包，其它业务模块通过引用这个 BOM 来间接引用需要使用的第三方 Java 包。工程完整代码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Robothy/gradle-bom-example"  target="_blank"  rel="nofollow">https://github.com/Robothy/gradle-bom-example</a></p> <h3 id="21-创建-bom-工程">2.1 创建 BOM 工程</h3> <p>Gradle 中的 BOM 工程需要使用 <code>java-platform</code> 插件，这样的工程是一个不包含源代码，只包含包声明的特殊的组件，也被称为平台（platform）。</p> <p>build.gradle 部分代码</p> <pre><code class="language-groovy"> plugins {     id 'java-platform' }  dependencies {     constraints {         // 声明一些三方包及其版本号         api "org.apache.kafka:kafka-clients:2.6.0"         api "redis.clients:jedis:3.5.2"     } } </code></pre> <p>上面代码中，三方包的声明没有放在 dependencies 中，而是放在了 constraints 里面。这表示如果使用了其中的包，优先使用 constraints 中声明的版本。</p> <p>BOM 项目中声明包的方式有两种：</p> <ul> <li> <p><code>api</code> 表示包在编译期可见。</p> </li> <li> <p><code>runtime</code> 表示包在运行期间可见。</p> </li> </ul> <h3 id="22-bom-的发布">2.2 BOM 的发布</h3> <p>BOM 的发布需要使用 <code>maven-publish</code> 插件，其发布配置如下：</p> <pre><code class="language-groovy">publishing {     publications {         thirdPartPlatform(MavenPublication){             from components.javaPlatform             artifactId = "third-part-dependencies"         }     }      repositories {         mavenLocal()     } } </code></pre> <p>BOM 的命名一般以 <code>-dependencies</code> 结尾，这里我们取名为 <code>third-part-dependnecies</code>。</p> <p>执行 <code>./gradlew.bat publish</code> 就可以将 BOM 发布到本地的 Maven 仓库了。发布的 artifacts 包含两个主要文件（.pom 和 .module）和若干校验文件。其中 .pom 的文件内容为 Maven 官方定义的 BOM 的标准格式，而 <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-module-metadata-latest-specification.md"  target="_blank"  rel="nofollow">.module 文件</a>内容是 Gradle 描述元数据的一种格式。</p> <h3 id="23-bom-的使用">2.3 BOM 的使用</h3> <p>普通的 Java 应用或者 Java 库使用 BOM 的时候需要先添加 BOM 依赖，然后使用其它的库。例如：</p> <pre><code class="language-groovy">// 引入 BOM implementation platform("org.example:third-part-dependencies:1.0")  // 引入包，这时不需要再指定版本号 implementation "org.apache.kafka:kafka-clients" </code></pre> <p>当然，BOM 工程或者说 platform 工程也可以使用 BOM。</p> <p>使用的时候需要在 dependencies 下面引入 BOM，然后在 constraints 下面声明要使用的库，声明的时候无须指定版本。另外，需要在 configurations 中调用 <code>javaPlatform.allowDependencies()</code>，否则会报错。</p> <pre><code class="language-groovy">configurations{     javaPlatform.allowDependencies() }  dependencies {     api platform("org.springframework.boot:spring-boot-dependencies:2.4.4")     constraints {         api "org.apache.kafka:kafka-clients:2.6.0"         api "redis.clients:jedis:3.5.2"         api "org.springframework.batch:spring-batch-core"     } } </code></pre> <h2 id="3-参考">3 参考</h2> <p>[1] <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html"  target="_blank"  rel="nofollow">Introduction to the Dependency Mechanism<br /></a></p> <p>[2] <a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.gradle.org/current/userguide/java_platform_plugin.html"  target="_blank"  rel="nofollow">The Java Platform Plugin</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-63572.htm">@DateTimeFormat和@JsonFormat浅解</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-50145.htm" title="如何在vue3项目中方便的引入Element plus并且进行配置注册并且方便使用">如何在vue3项目中方便的引入Element plus并且进行配置注册并且方便使用</a></li>
+                        <li class="py-2"><a href="/news/article-32933.htm" title="送养一个孩子怎样写协议书呢视频（送养一个孩子怎样写协议书呢视频教程）">送养一个孩子怎样写协议书呢视频（送养一个孩子怎样写协议书呢视频教程）</a></li>
+                        <li class="py-2"><a href="/news/article-60634.htm" title="动物医院需要几个兽医资格证书才能开药 动物医院需要几个兽医资格证书才能开药">动物医院需要几个兽医资格证书才能开药 动物医院需要几个兽医资格证书才能开药</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-node-share.htm" title="SockSTap节点订阅每天更新21.2M/S免费节点订阅链接">SockSTap节点订阅每天更新21.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-node-share-links.htm" title="SockSTap节点订阅每天更新20.9M/S免费节点订阅链接">SockSTap节点订阅每天更新20.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-node-share-links.htm" title="SockSTap节点订阅每天更新20.3M/S免费节点订阅链接">SockSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-free-subscribe-node.htm" title="SockSTap节点订阅每天更新19.5M/S免费节点订阅链接">SockSTap节点订阅每天更新19.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-53308.htm" title="vue项目刷新当前页面的方法">vue项目刷新当前页面的方法</a></li>
+                        <li class="py-2"><a href="/news/article-19427.htm" title="1970年农历四月二十四是什么星座（1970年农历4月24日阳历是多少）">1970年农历四月二十四是什么星座（1970年农历4月24日阳历是多少）</a></li>
+                        <li class="py-2"><a href="/news/article-31391.htm" title="2021年的国考公务员报名时间在什么时候考（2021国考公务员啥时候报名）">2021年的国考公务员报名时间在什么时候考（2021国考公务员啥时候报名）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
