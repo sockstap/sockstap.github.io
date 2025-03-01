@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-65414.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTL密码算法开源库拓展SM2算法</title>
+        <meta name="description" content="2021SC@SDUSC 一．概述 本部分给出了SM2椭圆曲线公钥密码算法涉及的必要数学基础知识与相关密码技术，以帮助实现 其它各部分所规定的密码机制。 本部分适用于基域为素域和二元扩域的椭圆曲线公钥" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-65414.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="NTL密码算法开源库拓展SM2算法" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/1948bbc18bded6897b276b91f5d3bbe8.webp" />
+        <meta property="og:release_date" content="2025-03-01T07:00:11" />
+    <meta property="og:updated_time" content="2025-03-01T07:00:11" />
+        <meta property="og:description" content="2021SC@SDUSC 一．概述 本部分给出了SM2椭圆曲线公钥密码算法涉及的必要数学基础知识与相关密码技术，以帮助实现 其它各部分所规定的密码机制。 本部分适用于基域为素域和二元扩域的椭圆曲线公钥" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="NTL密码算法开源库拓展SM2算法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>NTL密码算法开源库拓展SM2算法</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>2021SC@SDUSC</p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">一．概述</span></strong></p> <p style="margin-left:.0001pt;text-align:left;"><span style="color:#000000;">本部分给出了SM2椭圆曲线公钥密码算法涉及的必要数学基础知识与相关密码技术，以帮助实现</span></p> <p style="margin-left:.0001pt;text-align:left;"><span style="color:#000000;">其它各部分所规定的密码机制。</span></p> <p style="margin-left:.0001pt;text-align:left;"><span style="color:#000000;">本部分适用于基域为素域和二元扩域的椭圆曲线公钥密码算法。</span></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">符号和缩略</span></strong></p> <p style="margin-left:.0001pt;text-align:left;"><img fetchpriority="high" decoding="async" alt="" height="690" src="http://img.555519.xyz/uploads3/20220829/7f38379f04b60c5a05c5be0d04b0f756.jpg"></p> <p style="margin-left:.0001pt;text-align:left;"><img decoding="async" alt="" height="703" src="http://img.555519.xyz/uploads3/20220829/00e4e8110fb57ce2bcb268c2fc1c4cb3.jpg"></p> <p style="margin-left:.0001pt;text-align:left;"> <p style="margin-left:.0001pt;text-align:left;"><img decoding="async" alt="" height="329" src="http://img.555519.xyz/uploads3/20220829/3a944bb217011ff6a354f8130f00d542.jpg"></p> <p style="margin-left:.0001pt;text-align:left;"> <p style="margin-left:.0001pt;text-align:justify;"><strong><span style="color:#000000;">二．SM2的主要功能</span></strong></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">1.</span></strong><strong><span style="color:#000000;">公私钥</span></strong></p> <ul> <li style="text-align:left;"><span style="color:#000000;"><strong>私钥：BN_大整数</strong></span></li> <li style="text-align:left;"><span style="color:#000000;"><strong>公钥：EC-Point 椭圆曲线上的点<br /> 整体结构</strong></span></li> </ul> <p style="margin-left:.0001pt;text-align:left;"><img loading="lazy" decoding="async" alt="" height="522" src="http://img.555519.xyz/uploads3/20220829/5fbdc18d63de2ff69b9d0c4cfb04a6cd.jpg"></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">2</span></strong><strong><span style="color:#000000;">．数字签名算法</span></strong></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">2.1</span></strong><strong><span style="color:#000000;">签名（User A)</span></strong></p> <ul> <li style="text-align:left;"><span style="color:#000000;"><strong>签名者用户A的密钥对包括其私钥dA和公钥PA=[dA]G= (xA,yA)</strong></span></li> <li style="text-align:left;"><span style="color:#000000;"><strong>签名者用户A具有长度为entlenA比特的可辨别标识IDA，</strong></span></li> <li style="text-align:left;"><span style="color:#000000;"><strong>ENTLA</strong><strong>是由整数entlenA转换而成的两个字节</strong></span></li> <li style="text-align:left;"><span style="color:#000000;"><strong>ZA=H256(ENTLA || IDA || a || b || xG || yG|| xA || yA)</strong></span></li> <li style="text-align:left;"><span style="color:#000000;"><strong>待签名的消息为M，</strong></span></li> <li style="text-align:left;"><span style="color:#000000;"><strong>数字签名(r,s)</strong></span></li> </ul> <p style="margin-left:.0001pt;text-align:left;"><img loading="lazy" decoding="async" alt="" height="409" src="http://img.555519.xyz/uploads3/20220829/f48d5459852fd2d499f302743c0b5cd8.jpg"></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">说明：第5步若r=0或r+k=n则返回第3步；第6步若s=0则返回第3步。</span></strong></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">2.2</span></strong><strong><span style="color:#000000;">验签（User B）</span></strong></p> <ul> <li style="text-align:left;"><span style="color:#000000;"><strong>签名者用户A的密钥对包括其私钥dA和公钥PA=[dA]G= (xA,yA)</strong></span></li> <li style="text-align:left;"><span style="color:#000000;"><strong>签名者用户A具有长度为entlenA比特的可辨别标识IDA，</strong></span></li> <li style="text-align:left;"><span style="color:#000000;"><strong>ENTLA</strong><strong>是由整数entlenA转换而成的两个字节</strong></span></li> <li style="text-align:left;"><span style="color:#000000;"><strong>ZA=H256(ENTLA || IDA || a || b || xG || yG|| xA || yA)</strong><strong>。</strong></span></li> <li style="text-align:left;"><span style="color:#000000;"><strong>消息为M，数字签名(r,s)</strong></span></li> </ul> <p style="margin-left:.0001pt;text-align:left;"><img loading="lazy" decoding="async" alt="" height="429" src="http://img.555519.xyz/uploads3/20220829/34213df5a337586beffd36c1626ccb2c.jpg"></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">2.3</span></strong><strong><span style="color:#000000;">原理</span></strong></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">密钥交换（User A &amp; User B）</span></strong></p> <p style="margin-left:.0001pt;text-align:left;"><img loading="lazy" decoding="async" alt="" height="1200" src="http://img.555519.xyz/uploads3/20220829/a4e9393caaadcab5e6009741c9122f90.jpg"></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">密钥的封装与加解密</span></strong></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">加密（User A）</span></strong></p> <p style="margin-left:.0001pt;text-align:left;"> <p style="margin-left:.0001pt;text-align:left;"> <p style="margin-left:.0001pt;text-align:left;"><img loading="lazy" decoding="async" alt="" height="735" src="http://img.555519.xyz/uploads3/20220829/c64c2be5ea033fa0a9d2f22a7d61bb19.jpg"></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">解密（User B)</span></strong></p> <p style="margin-left:.0001pt;text-align:left;"><img loading="lazy" decoding="async" alt="" height="805" src="http://img.555519.xyz/uploads3/20220829/7b46fef3c6ac6cf65e41253185ab4cbc.jpg"></p> <p style="margin-left:.0001pt;text-align:left;"><strong><span style="color:#000000;">2.4代码实现（部分代码）</span></strong></p> <pre><code>int main()  {  &nbsp;&nbsp;&nbsp; int ret = 0;  &nbsp;&nbsp;&nbsp; // added by junxue.zheng SM2加密  &nbsp;&nbsp;&nbsp; std::string inputStr = "junxue"; //需要加密的字符串,如图所示，字符串中不可以有\0，否则后面的会加密失败  &nbsp;&nbsp;&nbsp; unsigned char inputChar[65535];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //字符串转换为char类型  &nbsp;&nbsp;&nbsp; inputStr.copy((char*)inputChar, inputStr.length(), 0);  &nbsp;&nbsp;&nbsp; int inputLen = inputStr.length();//未加密前数据的长度  &nbsp;&nbsp;&nbsp; int a = sizeof(inputStr);    &nbsp;&nbsp;&nbsp; unsigned char tempbuf[65535] = { 0 };//加密后的数据  &nbsp;&nbsp;&nbsp; ret = Encrpt_SM2(inputChar, inputLen, tempbuf);//加密，秘钥封装在了Encrpt_SM2（内部）  &nbsp;&nbsp;&nbsp; int tempLen = strlen((const char*)tempbuf);  &nbsp;&nbsp;&nbsp; // 输出的就是发送给js解密的字符串，可以把以下打印出的字符发送给js解密验证  &nbsp;&nbsp;&nbsp; printf("enc result:");  &nbsp;&nbsp;&nbsp; printf("\n");  &nbsp;&nbsp;&nbsp; int i = 0;  &nbsp;&nbsp;&nbsp; for (i = 0; i &lt; tempLen; i++)  &nbsp;&nbsp;&nbsp; {  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("%02X", tempbuf[i]);  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //printf("%x", sendbuf[i]);  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (1 == (i + 1) % 32 &amp;&amp; i!=0)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("\n");  &nbsp;&nbsp;&nbsp; }  &nbsp;&nbsp;&nbsp; printf("\n");    &nbsp;&nbsp;&nbsp; // 解密nodejs发送的数据。若收到数据是string，则需要转换为char数组 ,若收到的数据是char，则直接引用。以下以收到的数据为string为例说明；  &nbsp;&nbsp;&nbsp; // encData_str是收到js发送的数据；也可以是上面加密后的数据tempbuf  &nbsp;&nbsp;&nbsp; std::string&nbsp; encData_str = "04EBFC718E8D1798620432268E77FEB6415E2EDE0E073C0F4F640ECD2E149A73E858F9D81E5430A57B36DAAB8F950A3C64E6EE6A63094D99283AFF767E124DF089D494BCA98353CF1EB00DF753450763D85E90162610262E97C3E75FA335F75EB0176C8F5AA2";  &nbsp;&nbsp;&nbsp; int encDataLen = encData_str.length();  &nbsp;&nbsp;&nbsp; unsigned char encData_char[65535];  &nbsp;&nbsp;&nbsp; unsigned char decData[65535];  &nbsp;&nbsp;&nbsp; encData_str.copy((char*)encData_char, encDataLen, 0);  &nbsp;&nbsp;&nbsp; ret = Decrypt_SM2(encData_char, encDataLen, decData);//解密，秘钥封装在了Decrypt_SM2（内部）    &nbsp;&nbsp;&nbsp; system("pause");  &nbsp;&nbsp;&nbsp; return 0;</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-65413.htm">Python：多个tiff转csv，并按照像元合并成一个csv</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-30550.htm" title="动物疫苗价格排行榜最新图片大全集 动物疫苗价格排行榜最新图片大全集">动物疫苗价格排行榜最新图片大全集 动物疫苗价格排行榜最新图片大全集</a></li>
+                        <li class="py-2"><a href="/news/article-51196.htm" title="宠物粮食批发进货渠道有哪些呢图片视频介绍（宠物粮食批发进货渠道有哪些呢图片视频介绍大全）">宠物粮食批发进货渠道有哪些呢图片视频介绍（宠物粮食批发进货渠道有哪些呢图片视频介绍大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-node-share.htm" title="SockSTap节点订阅每天更新20.3M/S免费节点订阅链接">SockSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-56049.htm" title="编码练习：JavaScript 点击下拉列表显示相关信息">编码练习：JavaScript 点击下拉列表显示相关信息</a></li>
+                        <li class="py-2"><a href="/news/article-22171.htm" title="宠物医师资格证可以自考吗现在可以考吗（宠物医师资格证可以自考吗现在可以考吗知乎）">宠物医师资格证可以自考吗现在可以考吗（宠物医师资格证可以自考吗现在可以考吗知乎）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-node-share.htm" title="SockSTap节点订阅每天更新19M/S免费节点订阅链接">SockSTap节点订阅每天更新19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19427.htm" title="1970年农历四月二十四是什么星座（1970年农历4月24日阳历是多少）">1970年农历四月二十四是什么星座（1970年农历4月24日阳历是多少）</a></li>
+                        <li class="py-2"><a href="/news/article-57749.htm" title="猫三联一针间隔多久打一次（猫三联疫苗三针间隔时间）">猫三联一针间隔多久打一次（猫三联疫苗三针间隔时间）</a></li>
+                        <li class="py-2"><a href="/news/article-27726.htm" title="动物医院诊疗范围包括哪些 动物医院怎么样">动物医院诊疗范围包括哪些 动物医院怎么样</a></li>
+                        <li class="py-2"><a href="/news/article-26353.htm" title="宠物领养协议模板下载电子版（宠物领养协议书电子版）">宠物领养协议模板下载电子版（宠物领养协议书电子版）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

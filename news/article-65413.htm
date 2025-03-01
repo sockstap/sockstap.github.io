@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-65413.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python：多个tiff转csv，并按照像元合并成一个csv</title>
+        <meta name="description" content="1）定义tiff转csv的函数 from osgeo import gdal import pandas as pd import numpy as np  gdal.AllRegister()  d" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-65413.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="Python：多个tiff转csv，并按照像元合并成一个csv" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/dc93ffd553c37bd71778324307c3d68a.webp" />
+        <meta property="og:release_date" content="2025-03-01T07:00:11" />
+    <meta property="og:updated_time" content="2025-03-01T07:00:11" />
+        <meta property="og:description" content="1）定义tiff转csv的函数 from osgeo import gdal import pandas as pd import numpy as np  gdal.AllRegister()  d" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Python：多个tiff转csv，并按照像元合并成一个csv">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>Python：多个tiff转csv，并按照像元合并成一个csv</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="1tiffcsv_2" rel="nofollow"></a>1）定义tiff转csv的函数</h2> <pre><code class="prism language-python"><span class="token keyword">from</span> osgeo <span class="token keyword">import</span> gdal <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np  gdal<span class="token punctuation">.</span>AllRegister<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token keyword">def</span> <span class="token function">tifftocsv</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">:</span>     filePath <span class="token operator">=</span> path     dataset <span class="token operator">=</span> gdal<span class="token punctuation">.</span>Open<span class="token punctuation">(</span>filePath<span class="token punctuation">)</span>     adfGeoTransform <span class="token operator">=</span> dataset<span class="token punctuation">.</span>GetGeoTransform<span class="token punctuation">(</span><span class="token punctuation">)</span>     nXSize <span class="token operator">=</span> dataset<span class="token punctuation">.</span>RasterXSize  <span class="token comment"># 列数</span>     nYSize <span class="token operator">=</span> dataset<span class="token punctuation">.</span>RasterYSize  <span class="token comment"># 行数</span>     im_data <span class="token operator">=</span> dataset<span class="token punctuation">.</span>ReadAsArray<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>nXSize<span class="token punctuation">,</span>nYSize<span class="token punctuation">)</span>     index <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># 纬度</span>     columns <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># 经度</span>     <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nYSize<span class="token punctuation">)</span><span class="token punctuation">:</span>         lat <span class="token operator">=</span> adfGeoTransform<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">+</span> j <span class="token operator">*</span> adfGeoTransform<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span>         index<span class="token punctuation">.</span>append<span class="token punctuation">(</span>lat<span class="token punctuation">)</span>     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>nXSize<span class="token punctuation">)</span><span class="token punctuation">:</span>         lon <span class="token operator">=</span> adfGeoTransform<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> i <span class="token operator">*</span> adfGeoTransform<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>         columns<span class="token punctuation">.</span>append<span class="token punctuation">(</span>lon<span class="token punctuation">)</span>     data <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>im_data<span class="token punctuation">,</span> index<span class="token operator">=</span>index<span class="token punctuation">,</span> columns<span class="token operator">=</span>columns<span class="token punctuation">)</span>     data_np<span class="token operator">=</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>data<span class="token punctuation">)</span>     data_np<span class="token operator">=</span>data_np<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">5254</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>     data<span class="token operator">=</span>pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data_np<span class="token punctuation">)</span>     <span class="token keyword">return</span> data    </code></pre> <h2> <a id="2DataFrame_36" rel="nofollow"></a>2)计算得到一个DataFrame（作为后续合并的基础文件）</h2> <pre><code class="prism language-python"> aod_ab_num<span class="token operator">=</span><span class="token number">6</span>  <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>aod_ab_num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>      AODpath<span class="token operator">=</span><span class="token string">'D:\\research\\5_AOD\\results\\AODresults\\nmf'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>aod_ab_num<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'\\Abundance'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'.tif'</span>     AOD<span class="token operator">=</span>tifftocsv<span class="token punctuation">(</span>AODpath<span class="token punctuation">)</span>     AOD<span class="token punctuation">.</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'AOD'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">]</span>     <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>         result<span class="token operator">=</span>AOD     <span class="token keyword">else</span><span class="token punctuation">:</span>         frames<span class="token operator">=</span><span class="token punctuation">[</span>result<span class="token punctuation">,</span>AOD<span class="token punctuation">]</span>         result <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span>frames<span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  </code></pre> <h2> <a id="3_60" rel="nofollow"></a>3）批量计算其余所有的变量</h2> <pre><code class="prism language-python"> VARlist<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'NDVI'</span><span class="token punctuation">,</span><span class="token string">'VOC'</span><span class="token punctuation">,</span><span class="token string">'SO2'</span><span class="token punctuation">,</span><span class="token string">'Precipitation'</span><span class="token punctuation">,</span><span class="token string">'PM2.5'</span><span class="token punctuation">,</span><span class="token string">'OC'</span><span class="token punctuation">,</span><span class="token string">'NOX'</span><span class="token punctuation">,</span><span class="token string">'LST'</span><span class="token punctuation">,</span><span class="token string">'EVI'</span><span class="token punctuation">,</span><span class="token string">'BC'</span><span class="token punctuation">]</span>  ab_num<span class="token operator">=</span><span class="token number">6</span>  <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>VARlist<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     var<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">(</span>VARlist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>var<span class="token punctuation">)</span>     <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>ab_num<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token comment"># print(var)</span>         <span class="token comment">#print(j)</span>         VARpath<span class="token operator">=</span><span class="token string">'D:\\research\\5_AOD\\results\\'</span><span class="token operator">+</span>var<span class="token operator">+</span><span class="token string">'results\\nmf'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>ab_num<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'\\Abundance'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'.tif'</span>        <span class="token comment"># print(VARpath)</span>         VAR<span class="token operator">=</span>tifftocsv<span class="token punctuation">(</span>VARpath<span class="token punctuation">)</span>         VAR<span class="token punctuation">.</span>columns<span class="token operator">=</span><span class="token punctuation">[</span>var<span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">]</span>         frame<span class="token operator">=</span><span class="token punctuation">[</span>result<span class="token punctuation">,</span>VAR<span class="token punctuation">]</span>         result<span class="token operator">=</span>pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span>frame<span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>         result<span class="token operator">=</span>result<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>    </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-64807.htm">动物医院属于医疗行业吗知乎 动物医院属于医疗行业吗知乎</a></p>
+                                        <p>下一个：<a href="/news/article-65414.htm">NTL密码算法开源库拓展SM2算法</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-node-share.htm" title="SockSTap节点订阅每天更新18.1M/S免费节点订阅链接">SockSTap节点订阅每天更新18.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-12-free-node-subscribe.htm" title="SockSTap节点订阅每天更新18.6M/S免费节点订阅链接">SockSTap节点订阅每天更新18.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-19-node-share-links.htm" title="SockSTap节点订阅每天更新18.2M/S免费节点订阅链接">SockSTap节点订阅每天更新18.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28660.htm" title="数控刀片哪个品牌质量好(数控刀片品牌排行)">数控刀片哪个品牌质量好(数控刀片品牌排行)</a></li>
+                        <li class="py-2"><a href="/news/article-35763.htm" title="宠物疫苗可以上地铁吗北京（北京宠物猫可以上地铁吗）">宠物疫苗可以上地铁吗北京（北京宠物猫可以上地铁吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-23-node-share.htm" title="SockSTap节点订阅每天更新20.5M/S免费节点订阅链接">SockSTap节点订阅每天更新20.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新20.9M/S免费节点订阅链接">SockSTap节点订阅每天更新20.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-52772.htm" title="东北农业大学动物医学院附属医院电话（东北农业大学动物医学院附属医院电话）">东北农业大学动物医学院附属医院电话（东北农业大学动物医学院附属医院电话）</a></li>
+                        <li class="py-2"><a href="/news/article-57749.htm" title="猫三联一针间隔多久打一次（猫三联疫苗三针间隔时间）">猫三联一针间隔多久打一次（猫三联疫苗三针间隔时间）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-2-node-share-links.htm" title="SockSTap节点订阅每天更新21M/S免费节点订阅链接">SockSTap节点订阅每天更新21M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
