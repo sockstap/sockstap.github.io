@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-69237.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css单行文字垂直居中的代码</title>
+        <meta name="description" content="单行文字垂直居中的代码    CSS 没有给我们提供文字垂直居中的代码. 这里我们可以使用一个小技巧来实现. 解决方案: 让文字的行高等于盒子的高度 就可以让文字在当前盒子内垂直居中  &lt;!DO" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-69237.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="css单行文字垂直居中的代码" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/1948bbc18bded6897b276b91f5d3bbe8.webp" />
+        <meta property="og:release_date" content="2025-03-07T06:36:33" />
+    <meta property="og:updated_time" content="2025-03-07T06:36:33" />
+        <meta property="og:description" content="单行文字垂直居中的代码    CSS 没有给我们提供文字垂直居中的代码. 这里我们可以使用一个小技巧来实现. 解决方案: 让文字的行高等于盒子的高度 就可以让文字在当前盒子内垂直居中  &lt;!DO" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="css单行文字垂直居中的代码">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>css单行文字垂直居中的代码</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <div class="toc"> <h3>单行文字垂直居中的代码</h3> </div> <hr/> <p> CSS 没有给我们提供文字垂直居中的代码. 这里我们可以使用一个小技巧来实现.</p> <p><strong>解决方案:</strong> 让<strong>文字的行高</strong>等于<strong>盒子的高度</strong> 就可以让文字在当前盒子内垂直居中</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/5ac1214e3685bf3c2fbd0fef8b4e3382.jpg" alt="css单行文字垂直居中的代码"></p> <pre><code class="prism language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span><span class="token name">html</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ZH-CN<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span><span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span><span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span><span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>IE=edge<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span><span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span><span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css"><span class="token comment">/* 1.把a转换为块级元素 */</span><span class="token selector">a</span><span class="token punctuation">{<!-- --></span><span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span> 230px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span><span class="token property">background-color</span><span class="token punctuation">:</span> #55585a<span class="token punctuation">;</span><span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><span class="token property">font-size</span><span class="token punctuation">:</span> 14<span class="token punctuation">;</span><span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span><span class="token property">text-indent</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span><span class="token property">line-height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/* 2. 鼠标经过链接转换背景颜色 */</span><span class="token selector">a:hover</span><span class="token punctuation">{<!-- --></span><span class="token property">background-color</span><span class="token punctuation">:</span> #ff6700<span class="token punctuation">;</span><span class="token punctuation">}</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>手机 电话卡<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>电视 盒子<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>笔记本 平板<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>出行 穿戴<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>智能 路由器<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>健康 儿童<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>耳机 音响<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/1da74b84822d01e54516d4f57afdf2a4.jpg" alt="css单行文字垂直居中的代码"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/21ae82e6f189323ffb15da144f5bdad0.jpg" alt="css单行文字垂直居中的代码"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-68602.htm">天照宠物医院杜坤医生电话（北京天照爱宠物医院）</a></p>
+                                        <p>下一个：<a href="/news/article-69238.htm">python PIL Image 图像处理基本操作实例_python</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-45161.htm" title="上海地区宠物领养中心电话地址（上海宠物领养中心免费领养狗狗）">上海地区宠物领养中心电话地址（上海宠物领养中心免费领养狗狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-node-share.htm" title="SockSTap节点订阅每天更新18.4M/S免费节点订阅链接">SockSTap节点订阅每天更新18.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-65413.htm" title="Python：多个tiff转csv，并按照像元合并成一个csv">Python：多个tiff转csv，并按照像元合并成一个csv</a></li>
+                        <li class="py-2"><a href="/news/article-69238.htm" title="python PIL Image 图像处理基本操作实例_python">python PIL Image 图像处理基本操作实例_python</a></li>
+                        <li class="py-2"><a href="/news/article-37684.htm" title="动物疫苗间隔多久打一次最好呢 动物疫苗间隔多久打一次最好呢视频">动物疫苗间隔多久打一次最好呢 动物疫苗间隔多久打一次最好呢视频</a></li>
+                        <li class="py-2"><a href="/news/article-57175.htm" title="RMI反序列化学习">RMI反序列化学习</a></li>
+                        <li class="py-2"><a href="/news/article-47611.htm" title="北京美联众合动物医院电话（北京美联众合动物医院招聘）">北京美联众合动物医院电话（北京美联众合动物医院招聘）</a></li>
+                        <li class="py-2"><a href="/news/article-44160.htm" title="中国知名兽药（中国知名兽药公司排名）">中国知名兽药（中国知名兽药公司排名）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-28-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新21.1M/S免费节点订阅链接">SockSTap节点订阅每天更新21.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-13-node-share-links.htm" title="SockSTap节点订阅每天更新22.8M/S免费节点订阅链接">SockSTap节点订阅每天更新22.8M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
