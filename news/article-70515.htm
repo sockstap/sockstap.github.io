@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-70515.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3项目中的骨架屏</title>
+        <meta name="description" content="实现场景:刚进入页面的时候,需要后端接口回传的数据,还没有回来,为了客户有更好的体验,需要设置骨架屏,效果图如下:  &nbsp;实现步骤: 1.设置通用组件骨架屏(可以设置的属性:高，宽，背景颜色，" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-70515.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="Vue3项目中的骨架屏" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/15e0ca467a18dc6ad30476f430c84264.webp" />
+        <meta property="og:release_date" content="2025-03-09T09:47:03" />
+    <meta property="og:updated_time" content="2025-03-09T09:47:03" />
+        <meta property="og:description" content="实现场景:刚进入页面的时候,需要后端接口回传的数据,还没有回来,为了客户有更好的体验,需要设置骨架屏,效果图如下:  &nbsp;实现步骤: 1.设置通用组件骨架屏(可以设置的属性:高，宽，背景颜色，" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue3项目中的骨架屏">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>Vue3项目中的骨架屏</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>实现场景:刚进入页面的时候,需要后端接口回传的数据,还没有回来,为了客户有更好的体验,需要设置骨架屏,效果图如下:</p> <p><img fetchpriority="high" decoding="async" alt="" height="839" src="http://img.555519.xyz/uploads3/20220610/2d4593aa60d8480504ae5d88aea0d11d.jpg"><img decoding="async" alt="" height="779" src="http://img.555519.xyz/uploads3/20220610/d0a25fd7bfc056ba46af6a8dacecbd6d.jpg"></p> <p>&nbsp;实现步骤:</p> <p>1.设置通用组件骨架屏(可以设置的属性:<span style="color:#fe2c24;">高，宽，背景颜色，是否有闪动画</span>)</p> <p>基本传值如下图:</p> <p><img decoding="async" alt="" height="137" src="http://img.555519.xyz/uploads3/20220610/332d826c23c8236cbe526a99a061c55b.jpg"></p> <p>2.设置业务组件骨架屏</p> <p>1).设置通用组件骨架屏基本构建</p> <p>&nbsp;src/components/library/Skeleton.vue</p> <pre><code class="language-html">&lt;template&gt; &lt;div class="skeleton" :style="{width,height}" :class="{shan:animated}"&gt; &lt;!-- 1 盒子--&gt; &lt;div class="block" :style="{backgroundColor:bg}"&gt;&lt;/div&gt;  //一个盒子包含了另一个盒子,样式写在                                                                                                                              // 一个div中也是可以的 &lt;!-- 2 闪效果 xtx-skeleton 伪元素 ---&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: 'Skeleton', // 使用的时候需要动态设置 高度，宽度，背景颜色，是否闪下 props: { bg: { type: String, default: '#efefef' }, width: { type: String, default: '100px' }, height: { type: String, default: '100px' }, animated: { type: Boolean, default: false } } } &lt;/script&gt; &lt;style scoped lang="less"&gt; .skeleton { display: inline-block; position: relative; overflow: hidden; vertical-align: middle; .block { width: 100%; height: 100%; border-radius: 2px; } } .shan { &amp;::after { content: ""; position: absolute; animation: shan 1.5s ease 0s infinite; top: 0; width: 50%; height: 100%; background: linear-gradient( to left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100% ); transform: skewX(-45deg); } } @keyframes shan { 0% { left: -100%; } 100% { left: 120%; } } &lt;/style&gt;</code></pre> <p>&nbsp;全局注册(main.js中记得导入这个文件,并用Vue中use注册)</p> <p>src/componets/library/index.j</p> <pre><code class="language-javascript">import Skeleton from './Skeleton.vue'  export default { install (app) {  app.component(Skeleton.name, XtxSkeleton) } }</code></pre> <p>实现第一个图</p> <p><img loading="lazy" decoding="async" alt="" height="181" src="http://img.555519.xyz/uploads3/20220610/69c0d7cf461b6204f9fbb5cd42cebffa.jpg"></p> <p>&nbsp;src/views/home/components/home-cate.vue</p> <pre><code class="language-javascript">&lt;ul class="menu"&gt; &lt;li :class="{active:categoryId===item.id}" v-for="item in list" :key="item.id" @mouseenter="categoryId=item.id"&gt; &lt;RouterLink to="/"&gt;{<!-- -->{item.name}}&lt;/RouterLink&gt; &lt;template v-if="item.children"&gt; &lt;RouterLink to="/" v-for="sub in item.children" :key="sub.id"&gt;{<!-- -->{sub.name}}&lt;/RouterLink&gt; &lt;/template&gt;  &lt;span v-else&gt;  &lt;Skeleton width="60px" height="18px" style="margin-right:5px" bg="rgba(255,255,255,0.2)" /&gt;  &lt;Skeleton width="50px" height="18px" bg="rgba(255,255,255,0.2)" /&gt;  &lt;/span&gt; &lt;/li&gt; &lt;/ul&gt;</code></pre> <p>封装业务组件src/views/home/components/home-skeleton.vue,实现第二图的效果</p> <p><img loading="lazy" decoding="async" alt="" height="408" src="http://img.555519.xyz/uploads3/20220610/55086381dd679ce9efa7581d2a1dd212.jpg"></p> <pre><code class="language-html">&lt;template&gt; &lt;div class='home-skeleton'&gt; &lt;div class="item" v-for="i in 4" :key="i" :style="{backgroundColor:bg}"&gt; &lt;Skeleton bg="#e4e4e4" width="306px" height="306px" animated /&gt; &lt;Skeleton bg="#e4e4e4" width="160px" height="24px" animated /&gt; &lt;Skeleton bg="#e4e4e4" width="120px" height="24px" animated /&gt; &lt;/div&gt; &lt;/div&gt; &lt;/template&gt;  &lt;script&gt; export default { name: 'HomeSkeleton', props: { bg: { type: String, default: '#fff' } } } &lt;/script&gt;  &lt;style scoped lang='less'&gt; .home-skeleton { width: 1240px; height: 406px; display: flex; justify-content: space-between; .item { width: 306px; .xtx-skeleton ~ .xtx-skeleton{ display: block; margin: 16px auto 0; } } } &lt;/style&gt;</code></pre> <p>在需要用的组件中,导入业务组件使用</p> <pre><code class="language-html">&lt;HomePanel title="人气推荐" sub-title="人气爆款 不容错过"&gt;  &lt;Transition name="fade"&gt;  // 配合了vue中的淡入淡出的动画  &lt;ul v-if="goods.length" ref="pannel" class="goods-list"&gt;  // v-if有数据显示数据 &lt;li v-for="item in goods" :key="item.id"&gt; &lt;RouterLink to="/"&gt; &lt;img :src="item.picture" alt=""&gt; &lt;p class="name"&gt;{<!-- -->{item.title}}&lt;/p&gt; &lt;p class="desc"&gt;{<!-- -->{item.alt}}&lt;/p&gt; &lt;/RouterLink&gt; &lt;/li&gt; &lt;/ul&gt;  &lt;HomeSkeleton v-else /&gt;   // 没有数据就显示骨架  &lt;/Transition&gt;  &lt;/div&gt; &lt;/HomePanel&gt;</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-69874.htm">动物防疫站可以打疫苗吗 动物防疫站可以打疫苗吗现在</a></p>
+                                        <p>下一个：<a href="/news/article-70516.htm">人打的狂犬疫苗和动物打的一样吗多少钱（狂犬疫苗人和动物的一样吗?）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-52772.htm" title="东北农业大学动物医学院附属医院电话（东北农业大学动物医学院附属医院电话）">东北农业大学动物医学院附属医院电话（东北农业大学动物医学院附属医院电话）</a></li>
+                        <li class="py-2"><a href="/news/article-69873.htm" title="广州领养宠物狗的地方在哪里有（广州哪里可以领养宠物狗）">广州领养宠物狗的地方在哪里有（广州哪里可以领养宠物狗）</a></li>
+                        <li class="py-2"><a href="/news/article-42179.htm" title="常州宠颐生动物医院 常州宠颐生动物医院怎么样">常州宠颐生动物医院 常州宠颐生动物医院怎么样</a></li>
+                        <li class="py-2"><a href="/news/article-67918.htm" title="动物医院咨询电话号码（动物医院的电话号码）">动物医院咨询电话号码（动物医院的电话号码）</a></li>
+                        <li class="py-2"><a href="/news/article-54394.htm" title="Vue使用自定义指令实现拖拽行为">Vue使用自定义指令实现拖拽行为</a></li>
+                        <li class="py-2"><a href="/news/article-43677.htm" title="学美甲美睫纹绣去哪里学正规（学美甲美睫纹绣去哪里学正规重庆）">学美甲美睫纹绣去哪里学正规（学美甲美睫纹绣去哪里学正规重庆）</a></li>
+                        <li class="py-2"><a href="/news/article-50145.htm" title="如何在vue3项目中方便的引入Element plus并且进行配置注册并且方便使用">如何在vue3项目中方便的引入Element plus并且进行配置注册并且方便使用</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新19.3M/S免费节点订阅链接">SockSTap节点订阅每天更新19.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-free-node-subscribe.htm" title="SockSTap节点订阅每天更新20.8M/S免费节点订阅链接">SockSTap节点订阅每天更新20.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-60029.htm" title="广州宠物救助站官网电话号码（广州宠物救援队）">广州宠物救助站官网电话号码（广州宠物救援队）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
