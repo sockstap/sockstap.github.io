@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-72498.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建型设计模式: 单例模式(Singleton Pattern)</title>
+        <meta name="description" content="CSDN专栏: 设计模式(UML/23种模式)  单例模式(Singleton Pattern)保证一个类仅有一个实例，并提供一个访问它的全局访问点。Singleton模式属于创建型模式，创建型模式包" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-72498.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="创建型设计模式: 单例模式(Singleton Pattern)" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/99d0dd5d8754d259933624a9a92ca968.webp" />
+        <meta property="og:release_date" content="2025-03-12T06:09:30" />
+    <meta property="og:updated_time" content="2025-03-12T06:09:30" />
+        <meta property="og:description" content="CSDN专栏: 设计模式(UML/23种模式)  单例模式(Singleton Pattern)保证一个类仅有一个实例，并提供一个访问它的全局访问点。Singleton模式属于创建型模式，创建型模式包" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="创建型设计模式: 单例模式(Singleton Pattern)">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>创建型设计模式: 单例模式(Singleton Pattern)</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <blockquote> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/column/details/27399.html"  rel="nofollow">CSDN专栏: 设计模式(UML/23种模式)</a></p> </blockquote> <p>单例模式(Singleton Pattern)保证一个类仅有一个实例，并提供一个访问它的全局访问点。Singleton模式属于创建型模式，创建型模式包括FactoryMethod模式，AbstractFactory模式，Singleton模式，ProtoType模式和Builder模式。</p> <h2><a id="_6" rel="nofollow"></a>模式简介</h2> <p>单例模式(Singleton Pattern)是最简单的设计模式。Singleton模式的核心结构中只包含一个单例的特殊类。通过单例模式可以保证系统中有仅仅有唯一的示例。</p> <p>GOF的《设计模式》指出单例模式的意图是：<br /> 保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p> <p>Singleton模式适用于以下场景：</p> <ul> <li>当类只能有一个实例而且客户可以从一个众所周知的访问点访问它时。</li> <li>当这个唯一实例应该是通过子类化可扩展的，并且客户应该无需更改代码就能使用一个扩展的实例时。</li> </ul> <h2><a id="_18" rel="nofollow"></a>模式图解</h2> <p>单例模式保证一个类仅有一个实例，并提供一个访问它的全局访问点，是最简单的设计模式。单例模式的UML示例如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220821/613c03dda849c5fef0c3e3fa572939c5.jpg" alt="创建型设计模式: 单例模式(Singleton Pattern)"></p> <p>单例模式的工作过程如下：</p> <ul> <li>Singleton类中定义Instance操作，Instance操作允许客户访问它的唯一实例；</li> <li>Instance操作第一次被调用时，创建它自己的唯一实例；</li> <li>客户只能通过Instance操作访问Singleton实例；</li> </ul> <p>单例模式的有益效果如下：</p> <ul> <li>对唯一实例的受控访问 因为Singletion类封装它的唯一实例，Singleton限制了类的访问；</li> <li>Singletion模式是对全局变量的一种改进；</li> <li>扩展Singletion类的子类相对容易。</li> <li>允许可变数目的实例，实例数量可以控制</li> </ul> <h2><a id="_37" rel="nofollow"></a>模式实例</h2> <p>Android的系统服务大量使用了单例模式</p> <pre><code class="language-javascript"><code class="prism  language-javascript">libmedia<span class="token operator">/</span>AudioSystem<span class="token punctuation">.</span>cpp<span class="token punctuation">:</span><span class="token number">33</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span> client singleton<span class="token keyword">for</span> AudioFlinger binder<span class="token keyword">interface</span><span class="token class-name">libmedia</span><span class="token operator">/</span>AudioSystem<span class="token punctuation">.</span>cpp<span class="token punctuation">:</span><span class="token number">683</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span> client singleton<span class="token keyword">for</span> AudioPolicyService binder<span class="token keyword">interface</span><span class="token class-name">libmedia</span><span class="token operator">/</span>IMediaDeathNotifier<span class="token punctuation">.</span>cpp<span class="token punctuation">:</span><span class="token number">27</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span> client singleton<span class="token keyword">for</span> binder<span class="token keyword">interface</span><span class="token class-name">to</span> services libmedia<span class="token operator">/</span>mediametadataretriever<span class="token punctuation">.</span>cpp<span class="token punctuation">:</span><span class="token number">33</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span> client singleton<span class="token keyword">for</span> binder<span class="token keyword">interface</span><span class="token class-name">to</span> service</code></code></pre> <h2><a id="_47" rel="nofollow"></a>系列文章</h2> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/column/details/27399.html"  rel="nofollow">CSDN专栏: 设计模式(UML/23种模式)</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/media-tm/MTDesignPattern"  rel="nofollow">Github专栏: 设计模式(UML/23种模式)</a></li> </ul> <h2><a id="_52" rel="nofollow"></a>参考文献</h2> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://item.jd.com/10057319.html"  rel="nofollow">GOF的设计模式：可复用面向对象软件的基础</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://item.jd.com/11414555.html"  rel="nofollow">设计模式之禅</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/me115/design_patterns"  rel="nofollow">图说设计模式</a></li> </ul> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-71851.htm">宠物医院好评模板100字内容图片 宠物医院好评模板100字内容图片大全</a></p>
+                                        <p>下一个：<a href="/news/article-72500.htm">宠物医院申请手续（宠物医院办理流程）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-38709.htm" title="猫批发价格（全国猫咪低价批发零售）">猫批发价格（全国猫咪低价批发零售）</a></li>
+                        <li class="py-2"><a href="/news/article-40680.htm" title="新疆领养宠物的地方（新疆宠物救助）">新疆领养宠物的地方（新疆宠物救助）</a></li>
+                        <li class="py-2"><a href="/news/article-44645.htm" title="动物防疫疫苗的运输规定有哪些标准呢（动物防疫疫苗管理）">动物防疫疫苗的运输规定有哪些标准呢（动物防疫疫苗管理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-15-node-share-links.htm" title="SockSTap节点订阅每天更新21.8M/S免费节点订阅链接">SockSTap节点订阅每天更新21.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-7-free-node-subscribe.htm" title="SockSTap节点订阅每天更新19.7M/S免费节点订阅链接">SockSTap节点订阅每天更新19.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-46643.htm" title="北京免费领养宠物猫的地方（北京免费领养猫猫）">北京免费领养宠物猫的地方（北京免费领养猫猫）</a></li>
+                        <li class="py-2"><a href="/news/article-71180.htm" title="宠物粮批发市场在哪个位置最好做（宠物粮批发市场在哪个位置最好做呢）">宠物粮批发市场在哪个位置最好做（宠物粮批发市场在哪个位置最好做呢）</a></li>
+                        <li class="py-2"><a href="/news/article-41673.htm" title="MySQL碎片整理小节&#8211;实例演示">MySQL碎片整理小节&#8211;实例演示</a></li>
+                        <li class="py-2"><a href="/news/article-48461.htm" title="动物疫苗的保管与使用方法视频（动物疫苗的保管与使用方法视频讲解）">动物疫苗的保管与使用方法视频（动物疫苗的保管与使用方法视频讲解）</a></li>
+                        <li class="py-2"><a href="/news/article-65413.htm" title="Python：多个tiff转csv，并按照像元合并成一个csv">Python：多个tiff转csv，并按照像元合并成一个csv</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
