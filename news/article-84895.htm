@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-84895.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基于.NetCore开发博客项目 StarBlog &#8211; (4) markdown博客批量导入_在线工具</title>
+        <meta name="description" content="系列文章  基于.NetCore开发博客项目 StarBlog - (1) 为什么需要自己写一个博客？ 基于.NetCore开发博客项目 StarBlog - (2) 环境准备和创建项目 基于.Net" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-84895.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="基于.NetCore开发博客项目 StarBlog &#8211; (4) markdown博客批量导入_在线工具" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/9d606514ff108c6995e5f385410780ff.webp" />
+        <meta property="og:release_date" content="2025-03-30T09:36:33" />
+    <meta property="og:updated_time" content="2025-03-30T09:36:33" />
+        <meta property="og:description" content="系列文章  基于.NetCore开发博客项目 StarBlog - (1) 为什么需要自己写一个博客？ 基于.NetCore开发博客项目 StarBlog - (2) 环境准备和创建项目 基于.Net" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="基于.NetCore开发博客项目 StarBlog &#8211; (4) markdown博客批量导入_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>基于.NetCore开发博客项目 StarBlog &#8211; (4) markdown博客批量导入_在线工具</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="系列文章">系列文章</h2> <ul> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/deali/p/16104454.html"  target="_blank" rel="nofollow">基于.NetCore开发博客项目 StarBlog - (1) 为什么需要自己写一个博客？</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/deali/p/16172342.html"  target="_blank" rel="nofollow">基于.NetCore开发博客项目 StarBlog - (2) 环境准备和创建项目</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/deali/p/16180920.html"  target="_blank" rel="nofollow">基于.NetCore开发博客项目 StarBlog - (3) 模型设计</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/deali/p/16211720.html"  target="_blank" rel="nofollow">基于.NetCore开发博客项目 StarBlog - (4) markdown博客批量导入</a></li> <li>...</li> </ul> <h2 id="前言">前言</h2> <p>上周介绍了博客的模型设计，现在模型设计好了，要开始导入数据了。</p> <p>我们要把一个文件夹内的所有markdown文件导入，目录结构作为文章的分类，文件名作为文章的标题，同时把文件的创建、更新日期作为文章的发表时间。</p> <p>大概的思路就是先用.Net的标准库遍历目录，用第三方的markdown解析库处理文章内容，然后通过ORM写入数据库。</p> <blockquote> <p>PS：明天就是五一劳动节了，祝各位无产阶级劳动者节日快乐~</p> </blockquote> <h2 id="相关技术">相关技术</h2> <ul> <li>文件IO相关API</li> <li>正则表达式</li> <li>ORM：FreeSQL</li> <li>markdown解析库：Markdig</li> </ul> <h2 id="开始写代码">开始写代码</h2> <p>我们首先从最关键的markdown内容解析、图片提取、标题处理说起。</p> <p>为了处理markdown内容，我搜了一下相关资料，发现.Net Core目前能用的只有<code>Markdig</code>这个库，由于还处在开发阶段，没有完整文档，只能边看github主页的一点点说明边自己结合例子来用。没办法，没别的好的选择，又懒得<s>（菜）</s>造轮子，只能将就了。</p> <p>Markdig官网地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/xoofx/markdig"  target="_blank" rel="nofollow">https://github.com/xoofx/markdig</a></p> <p>在<code>StarBlog.Migrate</code>项目里新建一个Class：<code>PostProcessor</code>，我们要在这个class里实现markdown文件相关的处理逻辑。</p> <p><code>PostProcessor.cs</code>的完整代码在这：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/StarBlog/blob/master/StarBlog.Migrate/PostProcessor.cs"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/StarBlog/blob/master/StarBlog.Migrate/PostProcessor.cs</a></p> <p>构造方法：</p> <pre><code class="language-c#">private readonly Post _post; private readonly string _importPath; private readonly string _assetsPath;  public PostProcessor(string importPath, string assetsPath, Post post) {     _post = post;     _assetsPath = assetsPath;     _importPath = importPath; }</code></pre> <p>其中</p> <ul> <li><code>Post</code>：我们上一篇里设计的文章模型</li> <li><code>importPath</code>：要导入的markdown文件夹路径</li> <li><code>assetsPath</code>：资源文件存放路径，用于存放markdown里的图片，本项目设置的路径是<code>StarBlog.Web/wwwroot/media/blog</code></li> </ul> <h3 id="文章摘要提取">文章摘要提取</h3> <p>文章摘要提取，我做了简单的处理，把markdown内容渲染成文本，然后截取前n个字形成摘要，代码如下：</p> <pre><code class="language-c#">public string GetSummary(int length) {     return _post.Content == null         ? string.Empty         : Markdown.ToPlainText(_post.Content).Limit(length); }</code></pre> <h3 id="文章状态和标题处理">文章状态和标题处理</h3> <p>之前在用本地markdown文件写博客的时候，出于个人习惯，我会在文件名里加上代表状态的前缀，例如未完成的文章是这样的：</p> <pre><code>（未完成）StarBlog博客开发笔记(4)：markdown博客批量导入</code></pre> <p>或者已完成但未发布，会加上<code>（未发布）</code></p> <p>等到发布之后，就把前缀去掉，所以在导入的时候，我要用正则表达式对这个前缀进行提取，让导入数据库的博客文章标题不要再带上前缀了。</p> <p>代码如下</p> <pre><code class="language-c#">public (string, string) InflateStatusTitle() {     const string pattern = @"^（(.+)）(.+)$";     var status = _post.Status ?? "已发布";     var title = _post.Title; 	if (string.IsNullOrEmpty(title)) return (status, $"未命名文章{_post.CreationTime.ToLongDateString()}");     var result = Regex.Match(title, pattern);     if (!result.Success) return (status, title);      status = result.Groups[1].Value;     title = result.Groups[2].Value;      _post.Status = status;     _post.Title = title;      if (!new[] { "已发表", "已发布" }.Contains(_post.Status)) {         _post.IsPublish = false;     }      return (status, title); }</code></pre> <p>逻辑很简单，判断标题是否为空（对文件名来说这不太可能，不过为了严谨一点还是做了），然后用正则匹配，匹配到了就把状态提取出来，没匹配到就默认<code>"已发布"</code>。</p> <h3 id="图片提取--替换">图片提取 &amp; 替换</h3> <p>markdown内容处理比较复杂的就是这部分了，所以我之前就把这部分单独拿出来写了一篇文章来介绍，所以本文就不再重复太多，详情可以看我前面的这篇文章：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/deali/p/16027455.html"  target="_blank" rel="nofollow">C#解析Markdown文档，实现替换图片链接操作</a></p> <p>然后回到我们的博客项目，这部分的代码如下</p> <pre><code class="language-c#">public string MarkdownParse() {     if (_post.Content == null) {         return string.Empty;     }      var document = Markdown.Parse(_post.Content);      foreach (var node in document.AsEnumerable()) {         if (node is not ParagraphBlock { Inline: { } } paragraphBlock) continue;         foreach (var inline in paragraphBlock.Inline) {             if (inline is not LinkInline { IsImage: true } linkInline) continue;              if (linkInline.Url == null) continue;             if (linkInline.Url.StartsWith("http")) continue;              // 路径处理             var imgPath = Path.Combine(_importPath, _post.Path, linkInline.Url);             var imgFilename = Path.GetFileName(linkInline.Url);             var destDir = Path.Combine(_assetsPath, _post.Id);             if (!Directory.Exists(destDir)) Directory.CreateDirectory(destDir);             var destPath = Path.Combine(destDir, imgFilename);             if (File.Exists(destPath)) {                 // 图片重名处理                 var imgId = GuidUtils.GuidTo16String();                 imgFilename = $"{Path.GetFileNameWithoutExtension(imgFilename)}-{imgId}.{Path.GetExtension(imgFilename)}";                 destPath = Path.Combine(destDir, imgFilename);             }              // 替换图片链接             linkInline.Url = imgFilename;             // 复制图片             File.Copy(imgPath, destPath);              Console.WriteLine($"复制 {imgPath} 到 {destPath}");         }     }       using var writer = new StringWriter();     var render = new NormalizeRenderer(writer);     render.Render(document);     return writer.ToString(); }</code></pre> <p>实现的步骤大概是这样：</p> <ul> <li>用Markdig库的markdown解析功能</li> <li>把所有图片链接提取出来</li> <li>然后根据我们前面在构造方法中传入的<code>importPath</code>导入目录，去拼接图片的完整路径</li> <li>接着把图片复制到<code>assetsPath</code>里面</li> <li>最后把markdown中的图片地址替换为重新生成的图片文件名</li> </ul> <h3 id="小结">小结</h3> <p>目前这个方案处理大部分markdown中的图片都没问题，<strong>但是仍存在一个问题！</strong></p> <p><strong>图片文件名带空格时无法识别！</strong></p> <p>这个问题算是Markdig库的一个缺陷？吧，我尝试读了一下Markdig的代码想看看能不能fix一下，很遗憾我没读懂，所以暂时没有很好的办法，只能向官方提个issues了，这个库的更新很勤快，有希望让官方来修复这个问题。</p> <h2 id="遍历目录">遍历目录</h2> <p>前面说了关键的部分，现在来说一下比较简单的遍历目录文件，对文件IO用得很熟练的同学请跳过这部分~</p> <p>我用的是递归的方式来实现的，参考微软官方的一篇博客：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/file-system/how-to-iterate-through-a-directory-tree"  target="_blank" rel="nofollow">https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/file-system/how-to-iterate-through-a-directory-tree</a></p> <p>关键代码如下，完整代码在这：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/StarBlog/blob/master/StarBlog.Migrate/Program.cs"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/StarBlog/blob/master/StarBlog.Migrate/Program.cs</a></p> <pre><code class="language-c#">void WalkDirectoryTree(DirectoryInfo root) {     Console.WriteLine($"正在扫描文件夹：{root.FullName}");      FileInfo[]? files = null;     DirectoryInfo[]? subDirs = null;      try {         files = root.GetFiles("*.md");     }     catch (UnauthorizedAccessException e) {         Console.WriteLine(e.Message);     }     catch (DirectoryNotFoundException e) {         Console.WriteLine(e.Message);     }      if (files != null) {         foreach (var fi in files) {             Console.WriteLine(fi.FullName);             // 处理文章的代码，省略         }     }      subDirs = root.GetDirectories();      foreach (var dirInfo in subDirs) {         if (exclusionDirs.Contains(dirInfo.Name)) {             continue;         }          if (dirInfo.Name.EndsWith(".assets")) {             continue;         }          WalkDirectoryTree(dirInfo);     } }</code></pre> <p>用的这个方法叫做“前序遍历”，即先处理目录下的文件，然后再处理目录下的子目录。</p> <p>递归的方法写起来比较简单，但是有一个缺陷是如果目录结构嵌套太多的话，可能会堆栈溢出，可以考虑换用基于<code>Stack&lt;T&gt;</code>模式的遍历，不过作为博客的目录层级结构应该不会太多，所以我只用简单的~</p> <h2 id="写入数据库">写入数据库</h2> <p>本项目用到的ORM是FreeSQL，ORM操作在后续的网站开发中会有比较多的介绍，因此本文略过，文章数据写入数据库的代码很简单，可以直接看：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/StarBlog/blob/master/StarBlog.Migrate/Program.cs"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/StarBlog/blob/master/StarBlog.Migrate/Program.cs</a></p> <h2 id="结束">结束</h2> <p>OK，博客批量导入就介绍了这么多，几个麻烦的地方处理好之后也没啥难度了，有了文章数据之后，才能方便接下来开始开发博客网站~</p> <p>大概就这些了，下篇文章见~</p> <p>同时所有项目代码已经上传GitHub，欢迎各位大佬Star/Fork！</p> <ul> <li>博客后端+前台项目地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/StarBlog"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/StarBlog</a></li> <li>管理后台前端项目地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/Deali-Axy/StarBlog-Admin"  target="_blank" rel="nofollow">https://github.com/Deali-Axy/StarBlog-Admin</a></li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-84893.htm">android适配器：BaseAdapter</a></p>
+                                        <p>下一个：<a href="/news/article-85604.htm">文本垂直居中的两种解决办法</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-67918.htm" title="动物医院咨询电话号码（动物医院的电话号码）">动物医院咨询电话号码（动物医院的电话号码）</a></li>
+                        <li class="py-2"><a href="/news/article-73157.htm" title="小猫多久能知道自己的名字（猫要多久能知道自己的名字）">小猫多久能知道自己的名字（猫要多久能知道自己的名字）</a></li>
+                        <li class="py-2"><a href="/news/article-71179.htm" title="给宠物医院的好评一百字 给宠物医院的好评一百字怎么写">给宠物医院的好评一百字 给宠物医院的好评一百字怎么写</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-node-share.htm" title="SockSTap节点订阅每天更新18.4M/S免费节点订阅链接">SockSTap节点订阅每天更新18.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-76545.htm" title="动物疫苗间隔时间多久打第二针呢（动物疫苗间隔时间多久打第二针呢）">动物疫苗间隔时间多久打第二针呢（动物疫苗间隔时间多久打第二针呢）</a></li>
+                        <li class="py-2"><a href="/news/article-67304.htm" title="总结-微信小程序自定义顶部导航(超详细)附加效果图">总结-微信小程序自定义顶部导航(超详细)附加效果图</a></li>
+                        <li class="py-2"><a href="/news/article-70515.htm" title="Vue3项目中的骨架屏">Vue3项目中的骨架屏</a></li>
+                        <li class="py-2"><a href="/news/article-84181.htm" title="Java中线程状态+线程安全问题+synchronized的用法详解_java_">Java中线程状态+线程安全问题+synchronized的用法详解_java_</a></li>
+                        <li class="py-2"><a href="/news/article-73829.htm" title="做宠物食品厂赚钱吗（做宠物食品厂赚钱吗知乎）">做宠物食品厂赚钱吗（做宠物食品厂赚钱吗知乎）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-subscribe-node.htm" title="SockSTap节点订阅每天更新21.4M/S免费节点订阅链接">SockSTap节点订阅每天更新21.4M/S免费节点订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
