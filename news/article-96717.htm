@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-96717.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java实现带缓冲的输入输出流_java</title>
+        <meta name="description" content="缓冲是 I/O 的一种性能优化。缓冲流为 I/O 流增加了内存缓冲区。 BufferedInputStream类 与 BufferedOutputStream类 BufferedInputStream" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-96717.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="Java实现带缓冲的输入输出流_java" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/9d606514ff108c6995e5f385410780ff.webp" />
+        <meta property="og:release_date" content="2025-04-15T06:02:16" />
+    <meta property="og:updated_time" content="2025-04-15T06:02:16" />
+        <meta property="og:description" content="缓冲是 I/O 的一种性能优化。缓冲流为 I/O 流增加了内存缓冲区。 BufferedInputStream类 与 BufferedOutputStream类 BufferedInputStream" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java实现带缓冲的输入输出流_java">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>Java实现带缓冲的输入输出流_java</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>缓冲是 I/O 的一种性能优化。缓冲流为 I/O 流增加了内存缓冲区。</p> <h2>BufferedInputStream类 与 BufferedOutputStream类</h2> <p>BufferedInputStream类 可以对所有InputStream的子类进行缓冲区的包装，以达到性能的优化。</p> <p>BufferedOutputStream类 中的 flush()方法 被用来把缓冲区的字节写入到文件中，并清空缓存。</p> <h3>BufferedInputStream类的构造方法：</h3> <table> <tbody> <tr> <th>构造方法</th> <th>介绍</th> </tr> <tr> <td>BufferedInputStream(FileInputStream fileInputStream);</td> <td>创建一个带有32个字节的缓冲输入流。</td> </tr> <tr> <td>BufferedInputStream(FileInputStream fileInputStream , int size);</td> <td>按指定的大小来创建缓冲输入流。</td> </tr> </tbody> </table> <h3>BufferedOutputStream类的构造方法：</h3> <table> <tbody> <tr> <th>构造方法</th> <th>介绍</th> </tr> <tr> <td>BufferedOutputStream(FileOutputStream fileOutputStream);</td> <td>创建一个带有32个字节的缓冲输出流。</td> </tr> <tr> <td>BufferedOutputStream(FileOutputStream fileOutputStream , int size);</td> <td>按指定的大小来创建缓冲输出流。</td> </tr> </tbody> </table> <h3>BufferedInputStream类 与 BufferedOutputStream类 实例：</h3> <div class="ay1code"> <pre class="brush:java;">import java.io.*;     public class Demo4 {      public static void main(String[] args) {          /**           * 缓冲字节输入流（BufferedInputStream）           * 特点：提高效率           */          File file = new File("C:\\JAVA_API_1.7中文.chm");          BufferedInputStream bufferedInputStream = null;//创建缓冲字节流          FileInputStream fileInputStream = null;          long stare = System.currentTimeMillis();//获得当前流开始时的毫秒值          try {              fileInputStream=new FileInputStream(file);              bufferedInputStream = new BufferedInputStream(fileInputStream);//将文件字节流包装成缓冲字节流              byte by[] = new byte[1024];//缓冲区字节数组（这个缓冲区与Buffered不同）              while ((bufferedInputStream.read(by))!=-1){//使用缓冲字节流读取数据                 }              long end = System.currentTimeMillis();//获得当前流结束时的毫秒值              System.out.println("运行经历的毫秒数："+(end - stare));             } catch (FileNotFoundException e) {              e.printStackTrace();          } catch (IOException e) {              e.printStackTrace();          } finally {              if (fileInputStream!=null){                  try {                      fileInputStream.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }              if (bufferedInputStream!=null){                  try {                      bufferedInputStream.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }          }                              /**           * 缓冲字节输出流（BufferedOutputStream）           * 特点：提高效率           */          File file1 = new File("C:\\Word.txt");          BufferedOutputStream bufferedOutputStream = null;//创建缓冲字节输出流          FileOutputStream fileOutputStream = null;          try {              fileOutputStream=new FileOutputStream(file1);              bufferedOutputStream=new BufferedOutputStream(fileOutputStream);//将文件输出流包装到缓冲字节输出流                 String str = "深山踏红叶，耳畔闻鹭鸣。";              byte by[] = str.getBytes();              bufferedOutputStream.write(by);              //&lt;*&gt; 使用缓冲字节输出流时，要多进行刷新操作，避免等待，有数据时就将数据写入文件当中 &lt;*&gt;              bufferedOutputStream.flush();//刷新（强制将缓冲区数据写入文件中，即使缓冲区没有写满）             } catch (FileNotFoundException e) {              e.printStackTrace();          } catch (IOException e) {              e.printStackTrace();          } finally {              if (fileOutputStream!=null){                  try {                      fileOutputStream.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }              if (bufferedOutputStream!=null){                  try {                      bufferedOutputStream.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }          }      }  }</pre> </div> <h2>BufferedReader类 与 BufferedWriter类</h2> <p>BufferedReader类 与 BufferedWriter类 分别继承了 Reader类 与 Writer类，这两个类同样具有内部缓冲机制，并以行为单位输入/输出。</p> <h3>BufferedReader类常用方法：</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220419/ef29b2728ecc7f0d3a972b06667d7322.jpg"></p> <h3>BufferedWriter类常用方法：</h3> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220419/288963d53b2dba39980fe2a9cdfb316e.jpg"></p> <h3>BufferedReader类 与 BufferedWriter类 实例：</h3> <div class="ay1code"> <pre class="brush:java;">import java.io.*;     public class Demo6 {      public static void main(String[] args) {          File file = new File("C:\\Word.txt");             /**           * 文件缓冲字符输出流（BufferedWriter）           */          FileWriter fileWriter = null;//创建文件字符输出流          BufferedWriter bufferedWriter = null;//创建文件缓冲字符输出流             try {              fileWriter = new FileWriter(file);              bufferedWriter = new BufferedWriter(fileWriter);//将文件字符输出流包装成文件缓冲字符输出流                 String str1 = "神里";              String str2 = "绫华";                 bufferedWriter.write(str1);//第一行数据              bufferedWriter.newLine();//创建一个新行              bufferedWriter.write(str2);//第二行数据             } catch (IOException e) {              e.printStackTrace();          }finally {//&lt;*&gt; 注意：流的关闭顺序，先创建的后关闭。 &lt;*&gt;              if (bufferedWriter!=null){                  try {                      bufferedWriter.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }              if (fileWriter!=null){                  try {                      fileWriter.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }          }                /**           * 文件缓冲字符输入流（BufferedReader）           */          FileReader fileReader = null;          BufferedReader bufferedReader = null;          try {              fileReader = new FileReader(file);              bufferedReader = new BufferedReader(fileReader);//将文件字符输入流包装成文件缓冲字符输入流              String tmp = null;//临时变量              int i = 1;//计数器              while ((tmp = bufferedReader.readLine())!=null){//循环读取文件中的内容                  System.out.println("第"+i+"行："+tmp);                  i++;              }          } catch (FileNotFoundException e) {              e.printStackTrace();          } catch (IOException e) {              e.printStackTrace();          } finally {              if (bufferedReader!=null){                  try {                      bufferedReader.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }              if (fileReader!=null){                  try {                      fileReader.close();                  } catch (IOException e) {                      e.printStackTrace();                  }              }          }      }  }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-96716.htm">JavaScript的this指向原理</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-node-share.htm" title="SockSTap节点订阅每天更新21.2M/S免费节点订阅链接">SockSTap节点订阅每天更新21.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-75189.htm" title="Spring注解开发_Spring容器创建概述_在线工具">Spring注解开发_Spring容器创建概述_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-82758.htm" title="昆明哪里可以领养宠物（昆明什么地方可以领养宠物）">昆明哪里可以领养宠物（昆明什么地方可以领养宠物）</a></li>
+                        <li class="py-2"><a href="/news/article-92234.htm" title="南京宠物救助站在哪里 南京宠物救助站在哪里啊">南京宠物救助站在哪里 南京宠物救助站在哪里啊</a></li>
+                        <li class="py-2"><a href="/news/article-79292.htm" title="宠物粮食加工厂设备有哪些种类图片视频 宠物粮食加工厂设备有哪些种类图片视频讲解">宠物粮食加工厂设备有哪些种类图片视频 宠物粮食加工厂设备有哪些种类图片视频讲解</a></li>
+                        <li class="py-2"><a href="/news/article-69238.htm" title="python PIL Image 图像处理基本操作实例_python">python PIL Image 图像处理基本操作实例_python</a></li>
+                        <li class="py-2"><a href="/news/article-90855.htm" title="家猫为什么不打疫苗呢视频（为什么家猫不***活的也特别好）">家猫为什么不打疫苗呢视频（为什么家猫不***活的也特别好）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-29-node-share-links.htm" title="SockSTap节点订阅每天更新20.4M/S免费节点订阅链接">SockSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-75190.htm" title="宠物领养送养平台ER图 宠物领养赠送平台有哪些">宠物领养送养平台ER图 宠物领养赠送平台有哪些</a></li>
+                        <li class="py-2"><a href="/news/article-83463.htm" title="动物疫苗类型有哪几种（动物疫苗种类及类型）">动物疫苗类型有哪几种（动物疫苗种类及类型）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

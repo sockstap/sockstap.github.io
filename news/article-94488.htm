@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-94488.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>windows配置kubectl访问k8s集群</title>
+        <meta name="description" content="Kubernets官网有各系统的安装教程：https://kubernetes.io/zh/docs/tasks/tools/ Windows下安装kubectl   下载kubectl.exe，链接" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-94488.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="windows配置kubectl访问k8s集群" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/dc93ffd553c37bd71778324307c3d68a.webp" />
+        <meta property="og:release_date" content="2025-04-12T08:59:30" />
+    <meta property="og:updated_time" content="2025-04-12T08:59:30" />
+        <meta property="og:description" content="Kubernets官网有各系统的安装教程：https://kubernetes.io/zh/docs/tasks/tools/ Windows下安装kubectl   下载kubectl.exe，链接" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="windows配置kubectl访问k8s集群">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>windows配置kubectl访问k8s集群</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <p><code>Kubernets</code>官网有各系统的安装教程：<code>https://kubernetes.io/zh/docs/tasks/tools/</code></p> <p><code>Windows</code>下安装<code>kubectl</code></p> <ol> <li> <p>下载<code>kubectl.exe</code>，链接中的v1.18.5可以修改为其他版本</p> <pre><code>https://storage.googleapis.com/kubernetes-release/release/v1.18.5/bin/windows/amd64/kubectl.exe</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/ea09e5db8234fa26c1d159cbb921fbef.jpg" alt="windows配置kubectl访问k8s集群"></p> </li> <li> <p>配置<code>PATH</code><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/1c351829f43bd4ede62cc47a0f8509c6.jpg" alt="windows配置kubectl访问k8s集群"></p> </li> <li> <p>检查安装</p> <pre><code>D:\software\dev\k8s&gt;kubectl version Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.5", GitCommit:"e6503f8d8f769ace2f338794c914a96fc335df0f", GitTreeState:"clean", BuildDate:"2020-06-26T03:47:41Z", GoVersion:"go1.13.9", Compiler:"gc", Platform:"windows/amd64"} Unable to connect to the server: dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.</code></pre> </li> <li> <p><code>cmd</code>新建<code>.kube</code>文件夹</p> <p>在<code>C:\Users\Administrator</code>或者其他用户<code>C:\Users\80022319</code>下使用命令行新建<code>.kube</code>文件夹，<code>windows</code>不允许邮件新建以<code>.</code>开头的文件夹，只能用命令行新建</p> <pre><code>md .kube</code></pre> </li> <li> <p>在<code>.kube</code>下新建连接<code>k8s</code>集群的配置文件<code>config</code></p> <p>配置文件的内容，可以直接从你们的服务器上copy，例如某服务器可以连接k8s集群，这台服务器一定安装了<code>kubectl</code>，通过<code>cd ~ &amp;&amp; ls -a | grep .kube</code>查看是否有这个文件夹，然后拷贝<code>config</code>文件。或者让你们的运维帮你搞一下配置<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/f2a05022bdcf1ea29c02b2d70d336e95.jpg" alt="windows配置kubectl访问k8s集群"><br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220609/584a6609e0820036b5076077624ac064.jpg" alt="windows配置kubectl访问k8s集群"></p> </li> <li> <p>验证连接<code>k8s</code>集群</p> <pre><code>D:\software\dev\k8s&gt;kubectl version Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.5", GitCommit:"e6503f8d8f769ace2f338794c914a96fc335df0f", GitTreeState:"clean", BuildDate:"2020-06-26T03:47:41Z", GoVersion:"go1.13.9", Compiler:"gc", Platform:"windows/amd64"} Server Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.2", GitCommit:"c97fe5036ef3df2967d086711e6c0c405941e14b", GitTreeState:"clean", BuildDate:"2019-10-15T19:09:08Z", GoVersion:"go1.12.10", Compiler:"gc", Platform:"linux/amd64"}</code></pre> </li> </ol> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-93701.htm">猫三联一共要打几次疫苗（猫三联需要打几针）</a></p>
+                                        <p>下一个：<a href="/news/article-94489.htm">上海宠物医院收费标准2020标准（上海 宠物 医院）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-87776.htm" title="开宠物店需要注意的问题（开宠物店需要注意的问题）">开宠物店需要注意的问题（开宠物店需要注意的问题）</a></li>
+                        <li class="py-2"><a href="/news/article-84181.htm" title="Java中线程状态+线程安全问题+synchronized的用法详解_java_">Java中线程状态+线程安全问题+synchronized的用法详解_java_</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-8-free-subscribe-node.htm" title="SockSTap节点订阅每天更新21.9M/S免费节点订阅链接">SockSTap节点订阅每天更新21.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-87057.htm" title="小猫养多久才认主人?猫对主人的记忆有多久呢（小猫多长时间认主）">小猫养多久才认主人?猫对主人的记忆有多久呢（小猫多长时间认主）</a></li>
+                        <li class="py-2"><a href="/news/article-66023.htm" title="太原哪里可以领养猫狗狗（太原哪能领养猫）">太原哪里可以领养猫狗狗（太原哪能领养猫）</a></li>
+                        <li class="py-2"><a href="/news/article-85605.htm" title="南京宠物托运飞机（南京机场托运宠物）">南京宠物托运飞机（南京机场托运宠物）</a></li>
+                        <li class="py-2"><a href="/news/article-92234.htm" title="南京宠物救助站在哪里 南京宠物救助站在哪里啊">南京宠物救助站在哪里 南京宠物救助站在哪里啊</a></li>
+                        <li class="py-2"><a href="/news/article-72500.htm" title="宠物医院申请手续（宠物医院办理流程）">宠物医院申请手续（宠物医院办理流程）</a></li>
+                        <li class="py-2"><a href="/news/article-95229.htm" title="动物预防疾病控制中心可以打疫苗吗多少钱（动物疫病预防控制中心给宠物看病吗）">动物预防疾病控制中心可以打疫苗吗多少钱（动物疫病预防控制中心给宠物看病吗）</a></li>
+                        <li class="py-2"><a href="/news/article-79292.htm" title="宠物粮食加工厂设备有哪些种类图片视频 宠物粮食加工厂设备有哪些种类图片视频讲解">宠物粮食加工厂设备有哪些种类图片视频 宠物粮食加工厂设备有哪些种类图片视频讲解</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
