@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://sockstap.github.io/news/article-100420.htm" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try、catch、finally、return 执行流程——超详细讲解</title>
+        <meta name="description" content="1、不管有木有出现异常，finally块中代码都会执行； 2、当try和catch中有return时，finally仍然会执行； 3、finally是在return语句执行之后，返回之前执行的（此时并" />
+        <link rel="icon" href="/assets/website/img/sockstap/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="SockSTap免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sockstap.github.io/news/article-100420.htm" />
+    <meta property="og:site_name" content="SockSTap免费机场订阅节点官网" />
+    <meta property="og:title" content="try、catch、finally、return 执行流程——超详细讲解" />
+    <meta property="og:image" content="https://sockstap.github.io/uploads/20241105/f1858370a4034823ae0414af51fc4bea.webp" />
+        <meta property="og:release_date" content="2025-04-20T09:05:12" />
+    <meta property="og:updated_time" content="2025-04-20T09:05:12" />
+        <meta property="og:description" content="1、不管有木有出现异常，finally块中代码都会执行； 2、当try和catch中有return时，finally仍然会执行； 3、finally是在return语句执行之后，返回之前执行的（此时并" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="try、catch、finally、return 执行流程——超详细讲解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!--=====CSS=======-->
+    <link rel="stylesheet" href="/assets/website/css/sockstap/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/metisMenu.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fontawesome.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/slick-slider.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/nice-select.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/fonts.css">
+    <link rel="stylesheet" href="/assets/website/css/sockstap/master.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SNP4K622BD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SNP4K622BD');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <section>
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader ctn-preloader1">
+                <div class="animation-preloader">
+                    <!-- <div class="spinner"></div> -->
+                    <div class="cp-preloader cp-preloader_type2">SockSTap
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="O">O</span>
+                        <span class="cp-preloader__letter" data-preloader="C">C</span>
+                        <span class="cp-preloader__letter" data-preloader="K">K</span>
+                        <span class="cp-preloader__letter" data-preloader="S">S</span>
+                        <span class="cp-preloader__letter" data-preloader="T">T</span>
+                        <span class="cp-preloader__letter" data-preloader="A">A</span>
+                        <span class="cp-preloader__letter" data-preloader="P">P</span>
+                    </div>
+                </div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+    </section>
+    <!--=====Preloader end=======-->
+    <!--=====Header start=======-->
+    <header id="header" class="header header-2 header-absolute d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-elements">
+                        <div class="header_menu_area">
+                            <div class="logo">
+                                <a href="/">
+                                                                        <span>SockSTap</span>
+                                                                    </a>
+                            </div>
+                            <div class="main-menu">
+                                <div class="menu-wrap">
+                                    <ul class="menu_list">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--=====Header end=======-->
+    <!--=====Mobile header start=======-->
+    <div class="mobile-header mobile-header-4 d-lg-none">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="mobile-header-elements">
+                    <div class="mobile-logo">
+                        <a href="/">SockSTap</a>
+                    </div>
+                    <div class="mobile-nav-icon">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-sidebar">
+        <div class="menu-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="mobile-nav">
+                        <ul class="mobile-nav-list">
+                <li><a href="/">首页</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/free-nodes/">免费节点</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/paid-subscribe/">推荐机场</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/client.htm">客户端</a></li>
+            </ul>
+                        <ul class="mobile-nav-list">
+                <li><a href="/news/">新闻资讯</a></li>
+            </ul>
+                    </div>
+    </div>
+    <!--=====Mobile header end=======-->
+    <!--=====Inner hero Start=======-->
+    <div class="inner-1 bg-13" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 m-auto">
+                    <div class="inner-title text-center">
+                        <h1>try、catch、finally、return 执行流程——超详细讲解</h1>
+                        <p>
+                          <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====Inner hero end=======-->
+    <!--=====About start=======-->
+    <div class="about-area section-padding bg5-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p> 1、不管有木有出现异常，finally块中代码都会执行；</p> <p>2、当try和catch中有return时，finally仍然会执行；</p> <p>3、finally是在return语句执行之后，返回之前执行的（此时并没有返回运算后的值，而是先把要返回的值保存起来，不管finally中的代码怎么样，返回的值都不会改变，仍然是之前保存的值），所以函数返回值是在finally执行前就已经确定了；</p> <p>4、finally中如果包含return，那么程序将在这里返回，而不是try或catch中的return返回，返回值就不是try或catch中保存的返回值了。</p> <p>注意：<br /> finally修改的基本类型是不影响返回结果的。（传值的）<br /> 修改list ,map,自定义类等引用类型时，是影响返回结果的。（传址的）对象也是传址的<br /> 但是date类型经过测试是不影响的。有点奇怪。</p> <p>举例：<br /> 情况1： try{} catch(){}finally{} return;<br /> 显然程序按顺序执行。</p> <p>情况2: try{ return; }catch(){} finally{} return;</p> <p>先执行try块中return 语句（包括return语句中的表达式运算），但不返回；<br /> 执行finally语句中全部代码<br /> 最后执行try中return 返回<br /> finally块之后的语句return不执行，因为程序在try中已经return。<br /> 情况3: try{ } catch(){return;} finally{} return;<br /> 1、程序先执行try，如果遇到异常执行catch块，</p> <p>有异常：<br /> 执行catch中return语句，但不返回<br /> 执行finally语句中全部代码，<br /> 最后执行catch块中return返回。 finally块后的return语句不再执行。<br /> 无异常：执行完try再finally再return…<br /> 情况4: try{ return; }catch(){} finally{return;}</p> <p>执行try块return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块，<br /> 执行finally块，有return，从这里返回。<br /> 此时finally块的return值，就是代码执行完后的值</p> <p>情况5: try{} catch(){return;}finally{return;}</p> <p>程序执行catch块中return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块，<br /> 执行finally块，有return，从这里返回。<br /> 情况6: try{ return;}catch(){return;} finally{return;}<br /> 1、程序执行try块中return语句（包括return语句中的表达式运算），但不返回；</p> <p>有异常：</p> <p>执行catch块中return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块<br /> 执行finally块，有return，从这里返回。<br /> 无异常：</p> <p>再执行finally块</p> <p>执行finally块，有return，从这里返回。。</p> <p>最终结论：</p> <p>任何执行try 或者catch中的return语句之后，在返回之前，如果finally存在的话，都会先执行finally语句，<br /> 如果finally中有return语句，那么程序就return了，所以finally中的return是一定会被return的，<br /> 编译器把finally中的return实现为一个warning。</p> </p></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-99652.htm">被野猫抓伤轻微出血需要打狂犬疫苗吗（被野猫抓伤轻微出血需要打狂犬疫苗吗有用吗）</a></p>
+                                        <p>下一个：<a href="/news/article-100421.htm">猫三联每一针间隔多久打第二针（猫三联每一针间隔多久打第二针疫苗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-15-node-share.htm" title="SockSTap节点订阅每天更新22.1M/S免费节点订阅链接">SockSTap节点订阅每天更新22.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-88530.htm" title="动物免疫接种实验原理（动物免疫接种实验原理图）">动物免疫接种实验原理（动物免疫接种实验原理图）</a></li>
+                        <li class="py-2"><a href="/news/article-71180.htm" title="宠物粮批发市场在哪个位置最好做（宠物粮批发市场在哪个位置最好做呢）">宠物粮批发市场在哪个位置最好做（宠物粮批发市场在哪个位置最好做呢）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-node-share.htm" title="SockSTap节点订阅每天更新21.3M/S免费节点订阅链接">SockSTap节点订阅每天更新21.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-84893.htm" title="android适配器：BaseAdapter">android适配器：BaseAdapter</a></li>
+                        <li class="py-2"><a href="/news/article-92943.htm" title="动物疫苗的作用是什么意思 动物疫苗的作用是什么意思啊">动物疫苗的作用是什么意思 动物疫苗的作用是什么意思啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新19.9M/S免费节点订阅链接">SockSTap节点订阅每天更新19.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-73829.htm" title="做宠物食品厂赚钱吗（做宠物食品厂赚钱吗知乎）">做宠物食品厂赚钱吗（做宠物食品厂赚钱吗知乎）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-node-share.htm" title="SockSTap节点订阅每天更新18.4M/S免费节点订阅链接">SockSTap节点订阅每天更新18.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-93701.htm" title="猫三联一共要打几次疫苗（猫三联需要打几针）">猫三联一共要打几次疫苗（猫三联需要打几针）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=====About end=======-->
+        <!--=====Footer start=======-->
+    <footer class="footer-area footer-2 bg9">
+        <div class="container">
+            <div class="row align-items-center copyright2">
+                <div class="col-lg-6">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">SockSTap免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="social social2">
+                        <ul>
+                            <li><a data-bs-toggle="tooltip" title="Linked in" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>   
+                            <li><a data-bs-toggle="tooltip" title="Facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="Instagram" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a data-bs-toggle="tooltip" title="TikTok" href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--=====Footer end=======-->
+    <!--=====Up arrow start=======-->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewbox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!--=====Up arrow end=======-->
+    <script src="/assets/website/js/frontend/sockstap/jquery-3-6-0.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/aos.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/fontawesome.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/slick-slider.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/mesonry.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.magnific-popup.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/metisMenu.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.nice-select.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.countup.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/main.js"></script>
+    <script src="/assets/website/js/frontend/sockstap/app.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
