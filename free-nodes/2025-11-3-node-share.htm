@@ -203,9 +203,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密为何适合高封锁环境？</h5></div>
+    <div class="panel-heading"><h5>Netch 的 TAP 模式与 TUN 模式区别是什么？</h5></div>
     <div class="panel-body">
-        AEAD 加密可防止数据篡改和流量特征泄露，降低被检测风险。在高封锁网络中，保证节点可用性和连接稳定性，同时提升数据传输安全性，确保长期安全访问。<hr />    </div>
+        TAP 模式模拟以太网接口，适合游戏流量代理；TUN 模式则模拟 IP 层接口，更适合全局代理。根据用途不同可自由选择，但需管理员权限运行。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 的 QUIC 传输在高丢包环境下表现如何？</h5></div>
@@ -213,24 +213,24 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         QUIC 基于 UDP，具备拥塞控制和重传机制，在高丢包环境下仍能保持稳定连接。Hysteria2 利用 QUIC 特性，使流量高效传输，延迟低且稳定性好。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的伪装域名如何选择更安全？</h5></div>
-    <div class="panel-body">
-        伪装域名应选择真实可访问的网站，且证书有效。这样 Trojan 流量能伪装成正常 HTTPS 请求，减少被封锁或检测的风险，提高节点安全性和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 的 TAP 模式与 TUN 模式区别是什么？</h5></div>
-    <div class="panel-body">
-        TAP 模式模拟以太网接口，适合游戏流量代理；TUN 模式则模拟 IP 层接口，更适合全局代理。根据用途不同可自由选择，但需管理员权限运行。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 节点的 alterId 参数还需要设置吗？</h5></div>
     <div class="panel-body">
         在新版 V2Ray/Xray 内核中，alterId 已被废弃，不再影响认证逻辑。建议用户设置为 0 或删除该字段，以避免连接异常或不兼容情况。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess AEAD 加密为何适合高封锁环境？</h5></div>
+    <div class="panel-body">
+        AEAD 加密可防止数据篡改和流量特征泄露，降低被检测风险。在高封锁网络中，保证节点可用性和连接稳定性，同时提升数据传输安全性，确保长期安全访问。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>VMess AEAD 加密如何确保数据安全？</h5></div>
     <div class="panel-body">
         AEAD 加密防止数据篡改、重放攻击和流量特征泄露。在高封锁环境下，保证节点可用，提升数据安全和连接稳定性，降低被检测风险，确保长期安全访问。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 的伪装域名如何选择更安全？</h5></div>
+    <div class="panel-body">
+        伪装域名应选择真实可访问的网站，且证书有效。这样 Trojan 流量能伪装成正常 HTTPS 请求，减少被封锁或检测的风险，提高节点安全性和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2RayA 在 Linux 系统中如何开机自启？</h5></div>
@@ -243,14 +243,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         避免将私人订阅直接在公开场合分享，若需要共享可在服务端生成只读或限速专用订阅，并定期更换 token。对外公开时移除或隐藏用户识别字段，确保他人无法通过订阅追溯出个人账户信息。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何备份 Clash 配置文件？</h5></div>
-    <div class="panel-body">
-        Clash 的配置文件通常位于程序目录或配置文件夹中（如 Windows 下的 .config/clash）。用户可直接复制该 YAML 文件以备份，也可将订阅链接保存，便于后续恢复或在其他设备上同步使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 节点延迟高、丢包严重，常见排查步骤有哪些？</h5></div>
     <div class="panel-body">
-        先用 ping 和 traceroute 检查到服务器的延迟与路由跳数；再通过测速工具测带宽并尝试更换不同出站端口或混淆方式；若仍然不稳，考虑更换节点或联系客服查看服务端链路质量。    </div>
+        先用 ping 和 traceroute 检查到服务器的延迟与路由跳数；再通过测速工具测带宽并尝试更换不同出站端口或混淆方式；若仍然不稳，考虑更换节点或联系客服查看服务端链路质量。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何备份 Clash 配置文件？</h5></div>
+    <div class="panel-body">
+        Clash 的配置文件通常位于程序目录或配置文件夹中（如 Windows 下的 .config/clash）。用户可直接复制该 YAML 文件以备份，也可将订阅链接保存，便于后续恢复或在其他设备上同步使用。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -279,16 +279,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-21-free-subscribe-node.htm" title="SockSTap节点订阅每天更新20.4M/S免费节点订阅链接">SockSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-17-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新22M/S免费节点订阅链接">SockSTap节点订阅每天更新22M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-18-free-node-subscribe.htm" title="SockSTap节点订阅每天更新20.3M/S免费节点订阅链接">SockSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-26-node-share-links.htm" title="SockSTap节点订阅每天更新22.6M/S免费节点订阅链接">SockSTap节点订阅每天更新22.6M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-12-free-node-subscribe.htm" title="SockSTap节点订阅每天更新20.2M/S免费节点订阅链接">SockSTap节点订阅每天更新20.2M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-7-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新21.7M/S免费节点订阅链接">SockSTap节点订阅每天更新21.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-10-node-share.htm" title="SockSTap节点订阅每天更新20.3M/S免费节点订阅链接">SockSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-22-free-node-subscribe.htm" title="SockSTap节点订阅每天更新20.9M/S免费节点订阅链接">SockSTap节点订阅每天更新20.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-1-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新20.1M/S免费节点订阅链接">SockSTap节点订阅每天更新20.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-5-node-share.htm" title="SockSTap节点订阅每天更新18.4M/S免费节点订阅链接">SockSTap节点订阅每天更新18.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-8-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新19M/S免费节点订阅链接">SockSTap节点订阅每天更新19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-7-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新22.4M/S免费节点订阅链接">SockSTap节点订阅每天更新22.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-14-node-share.htm" title="SockSTap节点订阅每天更新18M/S免费节点订阅链接">SockSTap节点订阅每天更新18M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-20-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新21.5M/S免费节点订阅链接">SockSTap节点订阅每天更新21.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-16-node-share.htm" title="SockSTap节点订阅每天更新21.6M/S免费节点订阅链接">SockSTap节点订阅每天更新21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-3-free-subscribe-node.htm" title="SockSTap节点订阅每天更新20.9M/S免费节点订阅链接">SockSTap节点订阅每天更新20.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-3-node-share.htm" title="SockSTap节点订阅每天更新20.7M/S免费节点订阅链接">SockSTap节点订阅每天更新20.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-2-node-share-links.htm" title="SockSTap节点订阅每天更新20.4M/S免费节点订阅链接">SockSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-21-free-subscribe-node.htm" title="SockSTap节点订阅每天更新20.4M/S免费节点订阅链接">SockSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -300,7 +300,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">10</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>

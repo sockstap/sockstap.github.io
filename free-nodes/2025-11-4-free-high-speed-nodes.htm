@@ -199,6 +199,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/2025-11-3-node-share.htm">SockSTap节点订阅每天更新20.7M/S免费节点订阅链接</a></p>
+        <p>下一个：<a href="/free-nodes/2025-11-5-free-node-subscribe-links.htm">SockSTap节点订阅每天更新22.3M/S免费节点订阅链接</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
@@ -207,24 +208,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         是的。Nekoray 可以设置订阅更新频率，如每天或每小时。程序会自动下载更新节点并替换旧节点，保证用户始终使用最新线路。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 策略组如何提升节点切换效率？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 的节点延迟测量如何帮助选择节点？</h5></div>
     <div class="panel-body">
-        通过策略组可设置节点优先级和分流规则，结合延迟检测功能，Clash 自动选择延迟低、稳定性高的节点处理不同流量，提高网页、视频和游戏访问速度及整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 的 TUN 模式与 SOCKS5 代理有什么区别？</h5></div>
-    <div class="panel-body">
-        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理通常只影响支持代理的应用。TUN 更适合全局加速和游戏、视频等应用，保证所有流量通过节点，提高网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的重写功能有什么用途？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 的重写功能允许用户在请求阶段修改 HTTP 头、响应内容或重定向 URL。这一功能常用于屏蔽广告、解锁区域限制或调试网页请求，非常灵活强大。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 使用 AEAD 加密的优势是什么？</h5></div>
-    <div class="panel-body">
-        AEAD 加密提供更强的安全性和抗重放攻击能力，同时隐藏流量特征，降低被 DPI 检测风险。在高封锁环境下使用，可提升连接稳定性和长期可用性。<hr />    </div>
+        Shadowrocket 会测试节点延迟和丢包率，并根据结果排序。用户可快速选择延迟最低的节点访问网站或视频，提高连接速度和稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何检查 Clash 连接失败的日志以定位问题？</h5></div>
@@ -237,19 +223,34 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         减少 rule-provider 数量、关闭不必要的日志与统计、降低 DNS 轮询频率并禁用内置测速；若使用 TUN 模式，可改为代理模式减少内核负担。必要时升级到更高性能的设备或使用更轻量内核。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 的多路复用在短连接场景下有什么优势？</h5></div>
-    <div class="panel-body">
-        多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接应用，如游戏和即时通讯，能提高吞吐量和连接稳定性，优化网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的 PAC 模式适合哪些场景？</h5></div>
     <div class="panel-body">
         PAC 模式通过规则动态决定流量是否走代理。适合访问国内外混合网站环境，无需手动切换节点，自动分流提高网络访问效率和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的节点延迟测量如何帮助选择节点？</h5></div>
+    <div class="panel-heading"><h5>VMess 使用 AEAD 加密的优势是什么？</h5></div>
     <div class="panel-body">
-        Shadowrocket 会测试节点延迟和丢包率，并根据结果排序。用户可快速选择延迟最低的节点访问网站或视频，提高连接速度和稳定性，优化整体网络体验。    </div>
+        AEAD 加密提供更强的安全性和抗重放攻击能力，同时隐藏流量特征，降低被 DPI 检测风险。在高封锁环境下使用，可提升连接稳定性和长期可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的重写功能有什么用途？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 的重写功能允许用户在请求阶段修改 HTTP 头、响应内容或重定向 URL。这一功能常用于屏蔽广告、解锁区域限制或调试网页请求，非常灵活强大。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow 的 TUN 模式与 SOCKS5 代理有什么区别？</h5></div>
+    <div class="panel-body">
+        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理通常只影响支持代理的应用。TUN 更适合全局加速和游戏、视频等应用，保证所有流量通过节点，提高网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 策略组如何提升节点切换效率？</h5></div>
+    <div class="panel-body">
+        通过策略组可设置节点优先级和分流规则，结合延迟检测功能，Clash 自动选择延迟低、稳定性高的节点处理不同流量，提高网页、视频和游戏访问速度及整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 的多路复用在短连接场景下有什么优势？</h5></div>
+    <div class="panel-body">
+        多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接应用，如游戏和即时通讯，能提高吞吐量和连接稳定性，优化网络体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -278,16 +279,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-27-free-node-subscribe.htm" title="SockSTap节点订阅每天更新20.2M/S免费节点订阅链接">SockSTap节点订阅每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-23-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新18.8M/S免费节点订阅链接">SockSTap节点订阅每天更新18.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-9-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新19.9M/S免费节点订阅链接">SockSTap节点订阅每天更新19.9M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-17-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新22M/S免费节点订阅链接">SockSTap节点订阅每天更新22M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-13-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新21.9M/S免费节点订阅链接">SockSTap节点订阅每天更新21.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-12-free-node-subscribe.htm" title="SockSTap节点订阅每天更新20.2M/S免费节点订阅链接">SockSTap节点订阅每天更新20.2M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-19-node-share.htm" title="SockSTap节点订阅每天更新19.6M/S免费节点订阅链接">SockSTap节点订阅每天更新19.6M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-11-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新19.7M/S免费节点订阅链接">SockSTap节点订阅每天更新19.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-31-free-subscribe-node.htm" title="SockSTap节点订阅每天更新18.7M/S免费节点订阅链接">SockSTap节点订阅每天更新18.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-14-node-share.htm" title="SockSTap节点订阅每天更新18M/S免费节点订阅链接">SockSTap节点订阅每天更新18M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-21-free-subscribe-node.htm" title="SockSTap节点订阅每天更新20.4M/S免费节点订阅链接">SockSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-2-node-share-links.htm" title="SockSTap节点订阅每天更新20.4M/S免费节点订阅链接">SockSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-25-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新22.5M/S免费节点订阅链接">SockSTap节点订阅每天更新22.5M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-5-node-share.htm" title="SockSTap节点订阅每天更新18.4M/S免费节点订阅链接">SockSTap节点订阅每天更新18.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-6-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新21.8M/S免费节点订阅链接">SockSTap节点订阅每天更新21.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-free-subscribe-node.htm" title="SockSTap节点订阅每天更新19.5M/S免费节点订阅链接">SockSTap节点订阅每天更新19.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-12-free-node-subscribe.htm" title="SockSTap节点订阅每天更新20.2M/S免费节点订阅链接">SockSTap节点订阅每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-6-free-node-subscribe.htm" title="SockSTap节点订阅每天更新22.6M/S免费节点订阅链接">SockSTap节点订阅每天更新22.6M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -299,7 +300,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">10</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
