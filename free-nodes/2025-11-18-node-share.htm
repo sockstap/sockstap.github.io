@@ -331,27 +331,18 @@ A5：通过重新下载最新版本脚本替换旧版本，执行安装步骤并
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/2025-11-17-free-subscribe-node.htm">SockSTap节点订阅每天更新22.4M/S免费节点订阅链接</a></p>
+        <p>下一个：<a href="/free-nodes/2025-11-19-node-share.htm">SockSTap节点订阅每天更新19M/S免费节点订阅链接</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow TUN 模式如何拦截全局流量？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 的域名规则如何实现分流？</h5></div>
     <div class="panel-body">
-        TUN 模式会拦截系统 IP 层的所有流量，实现全局代理。相比 SOCKS5 只影响部分应用，TUN 可以覆盖游戏、视频和浏览器等所有流量，提高科学上网体验的全面性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow TUN 模式与 SOCKS5 的差别？</h5></div>
-    <div class="panel-body">
-        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理只影响支持代理的应用。TUN 适合全局加速，如游戏、视频和浏览器流量，提高网络稳定性和覆盖范围。<hr />    </div>
+        Sing-box 支持按域名匹配流量，将不同网站或应用流量分配到指定节点。结合策略组自动切换低延迟节点，可优化访问速度，保证网络稳定性并提高整体体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 如何通过策略组实现多节点负载均衡？</h5></div>
     <div class="panel-body">
         Clash 支持策略组功能，可以根据节点延迟、地区或用途自动选择最佳节点处理流量，实现多节点负载均衡。有效提高访问速度和稳定性，保证网页浏览、视频播放和游戏流畅。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 是否可以与 Shadowsocks 客户端共存？</h5></div>
-    <div class="panel-body">
-        可以。Nekobox 配置独立，不影响其他客户端运行。用户可以同时使用 Shadowsocks、Clash 等客户端，通过策略组或分流规则选择合适节点，互不干扰。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow 有哪些优势？</h5></div>
@@ -364,14 +355,14 @@ A5：通过重新下载最新版本脚本替换旧版本，执行安装步骤并
         支持。用户可通过端口号匹配流量，将不同应用的流量分配到指定节点，实现精准分流。结合策略组使用，可优化访问速度和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的域名规则如何实现分流？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 能否自动更新订阅？</h5></div>
     <div class="panel-body">
-        Sing-box 支持按域名匹配流量，将不同网站或应用流量分配到指定节点。结合策略组自动切换低延迟节点，可优化访问速度，保证网络稳定性并提高整体体验。<hr />    </div>
+        支持。Shadowrocket 可以设置定时更新周期，例如每隔 12 小时或每天自动刷新订阅链接，确保节点列表保持最新状态。这样无需手动更新即可长期稳定使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 节点延迟检测如何优化访问速度？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 是否可以与 Shadowsocks 客户端共存？</h5></div>
     <div class="panel-body">
-        WinXray 会定期测速节点延迟和丢包率，结合策略组自动切换到最佳节点。保证网页、视频和游戏流量走低延迟节点，提升访问速度和连接稳定性。<hr />    </div>
+        可以。Nekobox 配置独立，不影响其他客户端运行。用户可以同时使用 Shadowsocks、Clash 等客户端，通过策略组或分流规则选择合适节点，互不干扰。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 的伪装域名选择有哪些原则？</h5></div>
@@ -379,9 +370,19 @@ A5：通过重新下载最新版本脚本替换旧版本，执行安装步骤并
         伪装域名必须是真实可访问网站，并且证书有效。这样可以让 Trojan 流量看起来像普通 HTTPS 请求，减少被封锁或 DPI 检测风险，确保节点安全和可用性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 能否自动更新订阅？</h5></div>
+    <div class="panel-heading"><h5>Mellow TUN 模式如何拦截全局流量？</h5></div>
     <div class="panel-body">
-        支持。Shadowrocket 可以设置定时更新周期，例如每隔 12 小时或每天自动刷新订阅链接，确保节点列表保持最新状态。这样无需手动更新即可长期稳定使用。    </div>
+        TUN 模式会拦截系统 IP 层的所有流量，实现全局代理。相比 SOCKS5 只影响部分应用，TUN 可以覆盖游戏、视频和浏览器等所有流量，提高科学上网体验的全面性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 节点延迟检测如何优化访问速度？</h5></div>
+    <div class="panel-body">
+        WinXray 会定期测速节点延迟和丢包率，结合策略组自动切换到最佳节点。保证网页、视频和游戏流量走低延迟节点，提升访问速度和连接稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow TUN 模式与 SOCKS5 的差别？</h5></div>
+    <div class="panel-body">
+        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理只影响支持代理的应用。TUN 适合全局加速，如游戏、视频和浏览器流量，提高网络稳定性和覆盖范围。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -410,16 +411,16 @@ A5：通过重新下载最新版本脚本替换旧版本，执行安装步骤并
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-16-node-share.htm" title="SockSTap节点订阅每天更新21.6M/S免费节点订阅链接">SockSTap节点订阅每天更新21.6M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-14-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新21.1M/S免费节点订阅链接">SockSTap节点订阅每天更新21.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-23-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新18.8M/S免费节点订阅链接">SockSTap节点订阅每天更新18.8M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-10-node-share.htm" title="SockSTap节点订阅每天更新20.3M/S免费节点订阅链接">SockSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-3-free-subscribe-node.htm" title="SockSTap节点订阅每天更新20.9M/S免费节点订阅链接">SockSTap节点订阅每天更新20.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-4-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新20.1M/S免费节点订阅链接">SockSTap节点订阅每天更新20.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-15-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新19.3M/S免费节点订阅链接">SockSTap节点订阅每天更新19.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-8-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新19M/S免费节点订阅链接">SockSTap节点订阅每天更新19M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-19-node-share.htm" title="SockSTap节点订阅每天更新19.6M/S免费节点订阅链接">SockSTap节点订阅每天更新19.6M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-5-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新22.3M/S免费节点订阅链接">SockSTap节点订阅每天更新22.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-7-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新21.7M/S免费节点订阅链接">SockSTap节点订阅每天更新21.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-31-free-subscribe-node.htm" title="SockSTap节点订阅每天更新18.7M/S免费节点订阅链接">SockSTap节点订阅每天更新18.7M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-7-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新22.4M/S免费节点订阅链接">SockSTap节点订阅每天更新22.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-20-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新20.5M/S免费节点订阅链接">SockSTap节点订阅每天更新20.5M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-6-free-node-subscribe.htm" title="SockSTap节点订阅每天更新22.6M/S免费节点订阅链接">SockSTap节点订阅每天更新22.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-15-free-subscribe-node.htm" title="SockSTap节点订阅每天更新20.6M/S免费节点订阅链接">SockSTap节点订阅每天更新20.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-27-free-node-subscribe.htm" title="SockSTap节点订阅每天更新20.2M/S免费节点订阅链接">SockSTap节点订阅每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-8-free-subscribe-node.htm" title="SockSTap节点订阅每天更新19M/S免费节点订阅链接">SockSTap节点订阅每天更新19M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-27-free-subscribe-node.htm" title="SockSTap节点订阅每天更新21.6M/S免费节点订阅链接">SockSTap节点订阅每天更新21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-12-free-node-subscribe.htm" title="SockSTap节点订阅每天更新20.2M/S免费节点订阅链接">SockSTap节点订阅每天更新20.2M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -431,7 +432,7 @@ A5：通过重新下载最新版本脚本替换旧版本，执行安装步骤并
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
