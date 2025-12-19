@@ -326,12 +326,13 @@ A4：理论上可运行，但性能受限，建议尽量使用性能较好的设
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/2025-12-10-free-subscribe-node.htm">SockSTap节点订阅每天更新22.1M/S免费节点订阅链接</a></p>
+        <p>下一个：<a href="/free-nodes/2025-12-13-free-high-speed-nodes.htm">SockSTap节点订阅每天更新19.3M/S免费节点订阅链接</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 是否支持多客户端节点管理？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 自动切换节点机制如何工作？</h5></div>
     <div class="panel-body">
-        支持。Nekobox 可以独立管理 Shadowsocks、Clash 等客户端节点，互不干扰。结合策略组，可实现多客户端流量分流和网络优化，提高节点管理效率和使用便利性。<hr />    </div>
+        PassWall2 会根据节点延迟和丢包率测试结果，结合策略组自动选择最优节点处理流量。无需用户手动切换，保证网页、视频和游戏流量的速度和稳定性，优化网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 与 Clash 有什么关系？</h5></div>
@@ -339,9 +340,24 @@ A4：理论上可运行，但性能受限，建议尽量使用性能较好的设
         Surfboard 是一款基于 Clash 核心的 iOS 应用，专为苹果用户设计。它通过友好的界面实现分流管理、节点切换和延迟测试等功能。与 Clash 类似，Surfboard 也支持订阅更新和多种代理协议，兼容性非常好。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 自动切换节点机制如何工作？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 是否支持多客户端节点管理？</h5></div>
     <div class="panel-body">
-        PassWall2 会根据节点延迟和丢包率测试结果，结合策略组自动选择最优节点处理流量。无需用户手动切换，保证网页、视频和游戏流量的速度和稳定性，优化网络体验。<hr />    </div>
+        支持。Nekobox 可以独立管理 Shadowsocks、Clash 等客户端节点，互不干扰。结合策略组，可实现多客户端流量分流和网络优化，提高节点管理效率和使用便利性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 节点测速结合策略组的作用？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证网页、视频和游戏流量走低延迟节点，提高访问速度和连接稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何结合策略组使用？</h5></div>
+    <div class="panel-body">
+        Matsuri 会定期测速节点延迟，通过策略组自动选择低延迟、高稳定性的节点处理不同流量。无需手动切换，确保网页浏览、视频播放和游戏访问顺畅。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 订阅更新后节点消失，如何恢复？</h5></div>
+    <div class="panel-body">
+        先检查订阅源是否更改格式或被下架，尝试重新粘贴订阅链接并手动刷新；若仍缺失，联系订阅提供方确认是否停用某些节点或使用了新的访问权限机制（例如 token 验证）。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的多策略组有什么作用？</h5></div>
@@ -349,9 +365,9 @@ A4：理论上可运行，但性能受限，建议尽量使用性能较好的设
         多策略组可以将节点按用途、延迟或地域分类，结合路由规则实现自动分流。不同类型流量可走不同节点，提升访问速度和稳定性，特别适合多应用使用场景。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何结合策略组使用？</h5></div>
+    <div class="panel-heading"><h5>Vmess 的安全加密方式推荐使用哪种？</h5></div>
     <div class="panel-body">
-        Matsuri 会定期测速节点延迟，通过策略组自动选择低延迟、高稳定性的节点处理不同流量。无需手动切换，确保网页浏览、视频播放和游戏访问顺畅。<hr />    </div>
+        目前推荐使用 auto 或 none（结合 TLS 加密）以提升性能。旧版 AEAD 加密已被废弃，使用 TLS/XTLS 层提供的加密即可确保安全。过度加密反而增加 CPU 占用与延迟。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray QUIC 模式适合哪些网络环境？</h5></div>
@@ -361,22 +377,7 @@ A4：理论上可运行，但性能受限，建议尽量使用性能较好的设
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 可以与其他代理客户端共存吗？</h5></div>
     <div class="panel-body">
-        可以。Nekobox 与 Shadowsocks、Clash 等客户端互不干扰，可以同时运行。用户可通过策略组或分流规则选择使用节点，实现灵活的网络管理。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 节点测速结合策略组的作用？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证网页、视频和游戏流量走低延迟节点，提高访问速度和连接稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Vmess 的安全加密方式推荐使用哪种？</h5></div>
-    <div class="panel-body">
-        目前推荐使用 auto 或 none（结合 TLS 加密）以提升性能。旧版 AEAD 加密已被废弃，使用 TLS/XTLS 层提供的加密即可确保安全。过度加密反而增加 CPU 占用与延迟。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 订阅更新后节点消失，如何恢复？</h5></div>
-    <div class="panel-body">
-        先检查订阅源是否更改格式或被下架，尝试重新粘贴订阅链接并手动刷新；若仍缺失，联系订阅提供方确认是否停用某些节点或使用了新的访问权限机制（例如 token 验证）。    </div>
+        可以。Nekobox 与 Shadowsocks、Clash 等客户端互不干扰，可以同时运行。用户可通过策略组或分流规则选择使用节点，实现灵活的网络管理。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -405,16 +406,16 @@ A4：理论上可运行，但性能受限，建议尽量使用性能较好的设
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-12-9-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新20.3M/S免费节点订阅链接">SockSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-19-node-share.htm" title="SockSTap节点订阅每天更新19M/S免费节点订阅链接">SockSTap节点订阅每天更新19M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-22-free-node-subscribe.htm" title="SockSTap节点订阅每天更新18.4M/S免费节点订阅链接">SockSTap节点订阅每天更新18.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-1-node-share.htm" title="SockSTap节点订阅每天更新21.7M/S免费节点订阅链接">SockSTap节点订阅每天更新21.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-6-free-subscribe-node.htm" title="SockSTap节点订阅每天更新18.1M/S免费节点订阅链接">SockSTap节点订阅每天更新18.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-21-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新19.3M/S免费节点订阅链接">SockSTap节点订阅每天更新19.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-23-node-share.htm" title="SockSTap节点订阅每天更新18.3M/S免费节点订阅链接">SockSTap节点订阅每天更新18.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-10-free-subscribe-node.htm" title="SockSTap节点订阅每天更新19.5M/S免费节点订阅链接">SockSTap节点订阅每天更新19.5M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-15-free-subscribe-node.htm" title="SockSTap节点订阅每天更新20.6M/S免费节点订阅链接">SockSTap节点订阅每天更新20.6M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-29-node-share.htm" title="SockSTap节点订阅每天更新21.6M/S免费节点订阅链接">SockSTap节点订阅每天更新21.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-5-free-node-subscribe.htm" title="SockSTap节点订阅每天更新21.2M/S免费节点订阅链接">SockSTap节点订阅每天更新21.2M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-12-3-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新22.8M/S免费节点订阅链接">SockSTap节点订阅每天更新22.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-17-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新20.2M/S免费节点订阅链接">SockSTap节点订阅每天更新20.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-18-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新20.3M/S免费节点订阅链接">SockSTap节点订阅每天更新20.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-14-free-node-subscribe.htm" title="SockSTap节点订阅每天更新22.8M/S免费节点订阅链接">SockSTap节点订阅每天更新22.8M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-2-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新19.4M/S免费节点订阅链接">SockSTap节点订阅每天更新19.4M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-21-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新19.3M/S免费节点订阅链接">SockSTap节点订阅每天更新19.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-22-free-node-subscribe.htm" title="SockSTap节点订阅每天更新18.4M/S免费节点订阅链接">SockSTap节点订阅每天更新18.4M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -426,7 +427,7 @@ A4：理论上可运行，但性能受限，建议尽量使用性能较好的设
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
