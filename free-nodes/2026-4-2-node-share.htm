@@ -199,27 +199,13 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
         <p>上一个：<a href="/free-nodes/2026-3-30-node-share.htm">SockSTap节点订阅每天更新21.9M/S免费节点订阅链接</a></p>
+        <p>下一个：<a href="/free-nodes/2026-4-9-free-high-speed-nodes.htm">SockSTap节点订阅每天更新22.6M/S免费节点订阅链接</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆插件如何增强隐蔽性？</h5></div>
+    <div class="panel-heading"><h5>Hysteria2 的多路复用如何提高传输效率？</h5></div>
     <div class="panel-body">
-        混淆插件可模拟正常协议特征，如 HTTP 或 TLS 流量，使 SSR 流量难以被检测。合理选择混淆方式和协议，可提升在高封锁环境下的长期稳定性和安全性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 可以替换 Clash 配置文件吗？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持直接解析 Clash YAML 配置，并转换为自身 JSON 格式。节点、策略组和规则基本兼容，但部分自定义脚本可能需要手动调整才能完全使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 配置如何提高节点隐蔽性？</h5></div>
-    <div class="panel-body">
-        通过选择合适协议和混淆方式，将流量伪装成正常 HTTPS 或 HTTP 数据。可降低被 DPI 检测和封锁的风险，提高节点长期稳定性和科学上网体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 使用 mKCP 有哪些适合场景？</h5></div>
-    <div class="panel-body">
-        mKCP 是基于 UDP 的传输协议，适合高丢包或不稳定网络环境。结合策略组使用，可优化网页浏览、视频播放和游戏体验，减少延迟和掉线，提高连接稳定性。<hr />    </div>
+        Hysteria2 利用 QUIC 的多路复用功能，将多个请求共享单个 UDP 连接，减少握手次数和延迟，提升整体吞吐量。尤其在高并发场景中效果显著。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 可以导入哪些格式的规则文件？</h5></div>
@@ -227,14 +213,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Surfboard 支持 YAML 和部分 JSON 格式的规则文件，用户可以导入节点、策略组和分流规则。注意文件格式和语法必须符合 Surfboard 规范，否则可能导入失败。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 的多路复用如何提高传输效率？</h5></div>
+    <div class="panel-heading"><h5>SSR 配置如何提高节点隐蔽性？</h5></div>
     <div class="panel-body">
-        Hysteria2 利用 QUIC 的多路复用功能，将多个请求共享单个 UDP 连接，减少握手次数和延迟，提升整体吞吐量。尤其在高并发场景中效果显著。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的测速功能如何优化节点选择？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 可测量节点延迟和丢包率，并根据结果排序策略组节点。延迟低的节点会优先使用，保证网页浏览、视频和游戏的速度和稳定性，提高整体网络体验。<hr />    </div>
+        通过选择合适协议和混淆方式，将流量伪装成正常 HTTPS 或 HTTP 数据。可降低被 DPI 检测和封锁的风险，提高节点长期稳定性和科学上网体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>为什么使用 CDN 后仍然能被封？如何规避？</h5></div>
@@ -242,14 +223,34 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         若 CDN 回源 IP 或配置不当可能泄露真实服务器信息，或者 CDN 本身被目标防火墙识别。应启用完整的反向代理配置、隐藏源站 IP 与禁用不必要的服务，必要时使用多级中转或更换 CDN 供应商。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 使用 mKCP 有哪些适合场景？</h5></div>
+    <div class="panel-body">
+        mKCP 是基于 UDP 的传输协议，适合高丢包或不稳定网络环境。结合策略组使用，可优化网页浏览、视频播放和游戏体验，减少延迟和掉线，提高连接稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的测速功能如何优化节点选择？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 可测量节点延迟和丢包率，并根据结果排序策略组节点。延迟低的节点会优先使用，保证网页浏览、视频和游戏的速度和稳定性，提高整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆插件如何增强隐蔽性？</h5></div>
+    <div class="panel-body">
+        混淆插件可模拟正常协议特征，如 HTTP 或 TLS 流量，使 SSR 流量难以被检测。合理选择混淆方式和协议，可提升在高封锁环境下的长期稳定性和安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的 Rule Provider 功能是干什么的？</h5></div>
+    <div class="panel-body">
+        Rule Provider 是 Clash 的规则订阅机制，它可以通过远程 URL 自动更新分流规则文件。这样用户无需手动修改本地配置，就能保持规则同步更新，例如广告过滤或流媒体分流。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 的 gRPC 传输适合移动网络吗？</h5></div>
     <div class="panel-body">
         gRPC 传输支持长连接和多路复用，减少握手次数，降低延迟。对于移动网络和高延迟环境，它能提供稳定和高速的访问体验，同时降低掉线和延迟波动风险。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的 Rule Provider 功能是干什么的？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 可以替换 Clash 配置文件吗？</h5></div>
     <div class="panel-body">
-        Rule Provider 是 Clash 的规则订阅机制，它可以通过远程 URL 自动更新分流规则文件。这样用户无需手动修改本地配置，就能保持规则同步更新，例如广告过滤或流媒体分流。    </div>
+        Sing-box 支持直接解析 Clash YAML 配置，并转换为自身 JSON 格式。节点、策略组和规则基本兼容，但部分自定义脚本可能需要手动调整才能完全使用。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -278,16 +279,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2026-3-27-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新21.5M/S免费节点订阅链接">SockSTap节点订阅每天更新21.5M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-3-12-free-node-subscribe.htm" title="SockSTap节点订阅每天更新20.6M/S免费节点订阅链接">SockSTap节点订阅每天更新20.6M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-13-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新20.1M/S免费节点订阅链接">SockSTap节点订阅每天更新20.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-17-free-subscribe-node.htm" title="SockSTap节点订阅每天更新21.4M/S免费节点订阅链接">SockSTap节点订阅每天更新21.4M/S免费节点订阅链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-2-node-share.htm" title="SockSTap节点订阅每天更新21.9M/S免费节点订阅链接">SockSTap节点订阅每天更新21.9M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-8-node-share.htm" title="SockSTap节点订阅每天更新19.1M/S免费节点订阅链接">SockSTap节点订阅每天更新19.1M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-10-node-share.htm" title="SockSTap节点订阅每天更新19.3M/S免费节点订阅链接">SockSTap节点订阅每天更新19.3M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-18-free-node-subscribe.htm" title="SockSTap节点订阅每天更新21.7M/S免费节点订阅链接">SockSTap节点订阅每天更新21.7M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-29-free-subscribe-node.htm" title="SockSTap节点订阅每天更新19.5M/S免费节点订阅链接">SockSTap节点订阅每天更新19.5M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-9-node-share.htm" title="SockSTap节点订阅每天更新20.5M/S免费节点订阅链接">SockSTap节点订阅每天更新20.5M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-4-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新20.4M/S免费节点订阅链接">SockSTap节点订阅每天更新20.4M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-22-node-share.htm" title="SockSTap节点订阅每天更新22.5M/S免费节点订阅链接">SockSTap节点订阅每天更新22.5M/S免费节点订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-16-node-share.htm" title="SockSTap节点订阅每天更新21.2M/S免费节点订阅链接">SockSTap节点订阅每天更新21.2M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-28-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新21.1M/S免费节点订阅链接">SockSTap节点订阅每天更新21.1M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-10-free-node-subscribe-links.htm" title="SockSTap节点订阅每天更新21M/S免费节点订阅链接">SockSTap节点订阅每天更新21M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-15-node-share.htm" title="SockSTap节点订阅每天更新18.3M/S免费节点订阅链接">SockSTap节点订阅每天更新18.3M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-11-free-high-speed-nodes.htm" title="SockSTap节点订阅每天更新23M/S免费节点订阅链接">SockSTap节点订阅每天更新23M/S免费节点订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-3-25-free-node-subscribe.htm" title="SockSTap节点订阅每天更新21.4M/S免费节点订阅链接">SockSTap节点订阅每天更新21.4M/S免费节点订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -299,7 +300,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
